@@ -1,20 +1,12 @@
-# ROSbasic
+# ROVMIND
 
 The goal of this project is to develop preseason software technologies based on ROS. This project will explorer development paths and verify new technologies before more permanent hardware development. Key areas of testing are cameras, vector drive, controllers, and PID algortihms. Additionally new workflows/integration tactics are to be tested and documented (Travis CI, Docker, node documentation, doxygen). This project will expire at the beginning of the 2018-2019 robotics season.   
 
-![GitHub contributors](https://img.shields.io/github/contributors/JHSRobo/ROSBasic.svg)
-
 Release    
-[![Build Status](https://travis-ci.com/JHSRobo/ROSbasic.svg?branch=release)](https://travis-ci.com/JHSRobo/ROSbasic)
-[![CodeFactor](https://www.codefactor.io/repository/github/jhsrobo/rosbasic/badge)](https://www.codefactor.io/repository/github/jhsrobo/rosbasic)
 
 Master     
-[![Build Status](https://travis-ci.com/JHSRobo/ROSbasic.svg?branch=master)](https://travis-ci.com/JHSRobo/ROSbasic)
-[![CodeFactor](https://www.codefactor.io/repository/github/jhsrobo/rosbasic/badge)](https://www.codefactor.io/repository/github/jhsrobo/rosbasic)
 
 Development     
-[![Build Status](https://travis-ci.com/JHSRobo/ROSbasic.svg?branch=development)](https://travis-ci.com/JHSRobo/ROSbasic)
-[![CodeFactor](https://www.codefactor.io/repository/github/jhsrobo/rosbasic/badge)](https://www.codefactor.io/repository/github/jhsrobo/rosbasic)
 
 ## Release Page and Feature Addition Form
 
@@ -146,31 +138,10 @@ Note: The resolution of the realsense camera should always run at 1280x720 for t
 * Test using `roslaunch realsense2_camera rs_camera.launch`
 * Run on the rov by launching the `rov_control` file
 
-
-## Built With
-
-* [Robotics Operating System](http://wiki.ros.org/kinetic) - The web framework used
-* [Travis CI](https://travis-ci.com/) - Continious integration
-
-
-## Authors
-
-* **Michael Equi** - *Initial work*
-* **Andrew Grindstaff** - *Finishing work*
-
-See also the list of [contributors](https://github.com/JHSRobo/ROSbasic) who participated in this project.
-
 ## Acknowledgments
 
 * README Tempalte source https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
 * Inspiration
 * etc
 
-v2.18
-=======
-# rovMIND
-Main Jesuit Robotics ROS ROV software repository for core software systems.
->>>>>>> fdfbead14ed2978bd1fe43cd09f3e35a5f8f10d2
-=======
-# ROVMIND
-Main Jesuit Robotics R
+v0.1
