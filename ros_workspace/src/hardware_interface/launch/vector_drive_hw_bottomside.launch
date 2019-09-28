@@ -1,0 +1,15 @@
+<launch>
+
+ <!-- horizontal vector drive node -->
+   <node pkg="vector_drive" type="horiz_drive" name="horiz_drive"/>
+
+ <!-- vertical vector drive node -->
+    <node pkg="vector_drive" type="vert_drive" name="vert_drive"/>
+
+ <!-- harware interface -->
+   <node respawn="true"
+	pkg="hardware_interface" 
+	type="hw_thruster_controller_interface.py" 
+	name="hw_thruster_controller_interface"/>
+
+</launch>

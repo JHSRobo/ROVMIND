@@ -1,0 +1,21 @@
+<launch>
+ <!-- joystick -> vectorCommand-->
+  <node pkg="rov_control_interface" type="drive_control" name="drive_control"/>
+
+ <!-- joy node -->
+  <node respawn="true" pkg="joy"
+        type="joy_node" name="rov_joy" >
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.1" />
+  </node>
+
+ <!-- horizontal vector drive node -->
+   <node pkg="vector_drive" type="horiz_drive" name="horiz_drive"/>
+
+ <!-- vertical vector drive node -->
+    <node pkg="vector_drive" type="vert_drive" name="vert_drive"/>
+
+ <!-- temp copilot interface -->
+   <node pkg="rqt_reconfigure" type="rqt_reconfigure" name="rqt_reconfigure"/>
+
+</launch>

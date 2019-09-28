@@ -1,0 +1,75 @@
+<launch>
+
+<!-- output "log" or "screen" -->
+<arg name="output_source" default="log"/>
+
+<!-- RTAB viewer-->
+<arg name="rtabmapviz" default="true"/>
+
+<group ns="rov">
+
+  <!-- Name of camera -->
+  <group ns="realsense_cam">
+    <!-- Start the intel realsense camera -->
+    <!-- See https://github.com/intel-ros/realsense/blob/development/README.md -->
+    <include file="$(find realsense2_camera)/launch/includes/nodelet.launch.xml">
+      <arg name="serial_no"           value=""/>
+      <arg name="json_file_path"      value=""/>
+      <arg name="tf_prefix"           value="realsense_cam"/>
+
+      <arg name="base_frame_id"       value="camera_link"/>
+
+      <arg name="depth_width"         value="848"/>
+      <arg name="depth_height"        value="480"/>
+      <arg name="enable_depth"        value="true"/>
+
+      <arg name="infra_width"         value="848"/>
+      <arg name="infra_height"        value="480"/>
+      <arg name="enable_infra1"       value="false"/>
+      <arg name="enable_infra2"       value="false"/>
+
+      <arg name="color_width"         value="848"/>
+      <arg name="color_height"        value="480"/>
+      <arg name="enable_color"        value="true"/>
+
+      <!-- 6,15,30,60,90 -->
+      <arg name="depth_fps"           value="60"/>
+      <arg name="infra_fps"           value="60"/>
+      <arg name="color_fps"           value="60"/>
+
+      <arg name="enable_pointcloud"         value="false"/>
+      <arg name="pointcloud_texture_stream" value="RS2_STREAM_COLOR"/>
+      <arg name="pointcloud_texture_index"  value="0"/>
+
+      <arg name="enable_sync"           value="false"/>
+      <arg name="align_depth"           value="true"/>
+
+      <arg name="filters"               value=""/>
+      <arg name="clip_distance"         value="10"/>
+      <arg name="initial_reset"         value="true"/>
+    </include>
+  </group>
+
+  <!--roslaunch rtabmap_ros rtabmap.launch
+  rtabmap_args:="-delete_db_on_start"
+  depth_topic:=/camera/aligned_depth_to_color/image_raw
+  rgb_topic:=/camera/color/image_raw
+  camera_info_topic:=/camera/color/camera_info
+  approx_sync:=false -->
+  <include file="$(find rtabmap_ros)/launch/rtabmap.launch">
+    <arg name="rtabmapviz" value="$(arg rtabmapviz)"/>
+    <arg name="rtabmap_args" value="--delete_db_on_start"/>
+    <arg name="depth_topic" value="/rov/realsense_cam/aligned_depth_to_color/image_raw"/>
+    <arg name="rgb_topic" value="/rov/realsense_cam/color/image_raw"/>
+    <arg name="camera_info_topic" value="/rov/realsense_cam/color/camera_info"/>
+    <arg name="approx_sync" value="false"/>
+  </include>
+
+  <!-- Start Fusing IMU, VO, and Depth Sensor Odometry -->
+  <node name="odom_filter" pkg="robot_localization" type="ekf_localization_node" output="$(arg output_source)">
+    <rosparam command="load" file="$(find rov_control)/config/rov_robot_local_params.yaml"/>
+  </node>
+
+</group>
+
+</launch>

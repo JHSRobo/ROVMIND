@@ -1,0 +1,8 @@
+<launch>
+
+  <include file="$(find uuv_gazebo_worlds)/launch/ocean_waves.launch"/>
+  <include file="$(find rov_description)/launch/spawn_rov.launch"/>
+
+  <node name="simulation_interface" type="simulation_interface.py" pkg="rov_description"/>
+
+</launch>

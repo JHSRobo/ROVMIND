@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+  <model name="pool">
+    <static>true</static>
+    <link name="pool_link">
+      <collision name="pool_collision">
+        <geometry>
+          <mesh>
+            <uri>model://pool/meshes/pool.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="pool_visual">
+        <cast_shadows>true</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://pool/meshes/pool.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,19 @@
+actions: []
+authors: ''
+brief: ''
+bugtracker: ''
+depends:
+- message_generation
+- rospy
+- message_runtime
+- std_msgs
+- catkin
+description: The sht31 package
+license: TODO
+maintainers: michael <michael@todo.todo>
+msgs:
+- sht31_data
+package_type: package
+repo_url: ''
+srvs: []
+url: ''

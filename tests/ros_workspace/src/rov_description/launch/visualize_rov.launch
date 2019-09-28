@@ -1,0 +1,15 @@
+<launch>
+  <arg name="display" default="true"/>
+  <group ns="rov">
+
+    <param name="robot_description" command="$(find xacro)/xacro '$(find rov_description)/urdf/rov_default.xacro' --inorder"/>
+
+    <!-- Publish robot model for ROS -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen"/>
+
+    <group if="$(arg display)">
+      <node name="rov_rviz" pkg="rviz" type="rviz" args="-d $(find rov_description)/rviz_config/rov_visualize_rviz.rviz"/>
+    </group>
+
+  </group>
+</launch>

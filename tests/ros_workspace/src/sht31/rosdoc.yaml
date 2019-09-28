@@ -1,0 +1,3 @@
+ - builder: doxygen
+   name: sht31
+   output_dir: sht31

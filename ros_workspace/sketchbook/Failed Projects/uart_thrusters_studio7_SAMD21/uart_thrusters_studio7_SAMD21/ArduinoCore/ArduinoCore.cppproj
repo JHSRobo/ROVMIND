@@ -1,0 +1,557 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.ARMGCC.CPP</ToolchainName>
+    <ProjectGuid>a3956ac8-be5d-472d-b9c8-24b43411fa7c</ProjectGuid>
+    <avrdevice>ATSAMD21G18A</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>StaticLibrary</OutputType>
+    <Language>CPP</Language>
+    <OutputFileName>lib$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.a</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <Name>ArduinoCore</Name>
+    <ArduinoIdeDir>C:\Program Files (x86)\Arduino</ArduinoIdeDir>
+    <ArduinoProjectType>Core</ArduinoProjectType>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <AssemblyName>ArduinoCore</AssemblyName>
+    <RootNamespace>ArduinoCore</RootNamespace>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress />
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue />
+    <BootSegment>2</BootSegment>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+  <options />
+  <configurations />
+  <files />
+  <documentation help="" />
+  <offline-documentation help="" />
+  <dependencies>
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.34.1" />
+  </dependencies>
+</framework-data>
+    </AsfFrameworkConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <ArmGccCpp>
+  <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+  <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+  <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+  <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+  <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+  <armgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>NDEBUG</Value>
+      <Value>F_CPU=48000000L</Value>
+      <Value>ARDUINO=10803</Value>
+      <Value>ARDUINO_SAM_ZERO</Value>
+      <Value>ARDUINO_ARCH_SAM</Value>
+      <Value>USB_VID=0x2a03</Value>
+      <Value>USB_PID=0x804e</Value>
+      <Value>USB_PRODUCT="\"Arduino M0\""</Value>
+      <Value>USB_MANUFACTURER="\"Arduino LLC\""</Value>
+      <Value>USBCON</Value>
+      <Value>SAMD_SERIES</Value>
+    </ListValues>
+  </armgcc.compiler.symbols.DefSymbols>
+  <armgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\arm\CMSIS\4.2.0\CMSIS\Include\</Value>
+      <Value>..\include\libraries\Servo</Value>
+      <Value>..\include\libraries\Servo\avr</Value>
+      <Value>..\include\libraries\Servo\nrf52</Value>
+      <Value>..\include\libraries\Servo\sam</Value>
+      <Value>..\include\libraries\Servo\samd</Value>
+      <Value>..\include\libraries\Servo\stm32f4</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\core\avr</Value>
+      <Value>..\include\core\USB</Value>
+      <Value>..\include\variants</Value>
+    </ListValues>
+  </armgcc.compiler.directories.IncludePaths>
+  <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
+  <armgcc.compiler.optimization.OtherFlags>-fno-threadsafe-statics -fno-exceptions</armgcc.compiler.optimization.OtherFlags>
+  <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <armgcc.compiler.optimization.PrepareDataForGarbageCollection>True</armgcc.compiler.optimization.PrepareDataForGarbageCollection>
+  <armgcc.compiler.optimization.EnableLongCalls>False</armgcc.compiler.optimization.EnableLongCalls>
+  <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
+  <armgcc.compiler.warnings.InhibitAllWarnings>True</armgcc.compiler.warnings.InhibitAllWarnings>
+  <armgcc.compiler.miscellaneous.OtherFlags>-std=gnu11 --param max-inline-insns-single=500 -nostdlib</armgcc.compiler.miscellaneous.OtherFlags>
+  <armgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>NDEBUG</Value>
+      <Value>F_CPU=48000000L</Value>
+      <Value>ARDUINO=10803</Value>
+      <Value>ARDUINO_SAM_ZERO</Value>
+      <Value>ARDUINO_ARCH_SAM</Value>
+      <Value>USB_VID=0x2a03</Value>
+      <Value>USB_PID=0x804e</Value>
+      <Value>USB_PRODUCT="\"Arduino M0\""</Value>
+      <Value>USB_MANUFACTURER="\"Arduino LLC\""</Value>
+      <Value>USBCON</Value>
+      <Value>SAMD_SERIES</Value>
+    </ListValues>
+  </armgcccpp.compiler.symbols.DefSymbols>
+  <armgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\arm\CMSIS\4.2.0\CMSIS\Include\</Value>
+      <Value>..\include\libraries\Servo</Value>
+      <Value>..\include\libraries\Servo\avr</Value>
+      <Value>..\include\libraries\Servo\nrf52</Value>
+      <Value>..\include\libraries\Servo\sam</Value>
+      <Value>..\include\libraries\Servo\samd</Value>
+      <Value>..\include\libraries\Servo\stm32f4</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\core\avr</Value>
+      <Value>..\include\core\USB</Value>
+      <Value>..\include\variants</Value>
+    </ListValues>
+  </armgcccpp.compiler.directories.IncludePaths>
+  <armgcccpp.compiler.optimization.level>Optimize for size (-Os)</armgcccpp.compiler.optimization.level>
+  <armgcccpp.compiler.optimization.OtherFlags>-fno-threadsafe-statics -fno-exceptions</armgcccpp.compiler.optimization.OtherFlags>
+  <armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <armgcccpp.compiler.optimization.PrepareDataForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareDataForGarbageCollection>
+  <armgcccpp.compiler.optimization.EnableLongCalls>False</armgcccpp.compiler.optimization.EnableLongCalls>
+  <armgcccpp.compiler.optimization.DebugLevel>Maximum (-g3)</armgcccpp.compiler.optimization.DebugLevel>
+  <armgcccpp.compiler.warnings.InhibitAllWarnings>True</armgcccpp.compiler.warnings.InhibitAllWarnings>
+  <armgcccpp.compiler.miscellaneous.OtherFlags>-std=gnu++11 --param max-inline-insns-single=500 -nostdlib</armgcccpp.compiler.miscellaneous.OtherFlags>
+  <armgcccpp.linker.general.UseNewlibNano>True</armgcccpp.linker.general.UseNewlibNano>
+  <armgcccpp.linker.general.AdditionalSpecs>Use syscall stubs (--specs=nosys.specs)</armgcccpp.linker.general.AdditionalSpecs>
+  <armgcccpp.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </armgcccpp.linker.libraries.Libraries>
+  <armgcccpp.linker.optimization.GarbageCollectUnusedSections>True</armgcccpp.linker.optimization.GarbageCollectUnusedSections>
+  <armgcccpp.linker.miscellaneous.LinkerFlags>-Wl,--cref -Os -Wl,--check-sections -Wl,--unresolved-symbols=report-all -Wl,--warn-common -Wl,--warn-section-align</armgcccpp.linker.miscellaneous.LinkerFlags>
+  <armgcccpp.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\SAMD21_DFP\1.2.276\samd21a\include</Value>
+      <Value>%24(PackRepoDir)\arm\CMSIS\4.2.0\CMSIS\Include\</Value>
+    </ListValues>
+  </armgcccpp.assembler.general.IncludePaths>
+  <armgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.assembler.debugging.DebugLevel>
+  <armgcccpp.preprocessingassembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\SAMD21_DFP\1.2.276\samd21a\include</Value>
+      <Value>%24(PackRepoDir)\arm\CMSIS\4.2.0\CMSIS\Include\</Value>
+    </ListValues>
+  </armgcccpp.preprocessingassembler.general.IncludePaths>
+</ArmGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <ArmGccCpp>
+  <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+  <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+  <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+  <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+  <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+  <armgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>DEBUG</Value>
+      <Value>F_CPU=48000000L</Value>
+      <Value>ARDUINO=10803</Value>
+      <Value>ARDUINO_SAM_ZERO</Value>
+      <Value>ARDUINO_ARCH_SAM</Value>
+      <Value>USB_VID=0x2a03</Value>
+      <Value>USB_PID=0x804e</Value>
+      <Value>USB_PRODUCT="\"Arduino M0\""</Value>
+      <Value>USB_MANUFACTURER="\"Arduino LLC\""</Value>
+      <Value>USBCON</Value>
+      <Value>SAMD_SERIES</Value>
+    </ListValues>
+  </armgcc.compiler.symbols.DefSymbols>
+  <armgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\arm\CMSIS\4.2.0\CMSIS\Include\</Value>
+      <Value>..\include\libraries\Servo</Value>
+      <Value>..\include\libraries\Servo\avr</Value>
+      <Value>..\include\libraries\Servo\nrf52</Value>
+      <Value>..\include\libraries\Servo\sam</Value>
+      <Value>..\include\libraries\Servo\samd</Value>
+      <Value>..\include\libraries\Servo\stm32f4</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\core\avr</Value>
+      <Value>..\include\core\USB</Value>
+      <Value>..\include\variants</Value>
+    </ListValues>
+  </armgcc.compiler.directories.IncludePaths>
+  <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
+  <armgcc.compiler.optimization.OtherFlags>-fno-threadsafe-statics -fno-exceptions</armgcc.compiler.optimization.OtherFlags>
+  <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <armgcc.compiler.optimization.PrepareDataForGarbageCollection>True</armgcc.compiler.optimization.PrepareDataForGarbageCollection>
+  <armgcc.compiler.optimization.EnableLongCalls>False</armgcc.compiler.optimization.EnableLongCalls>
+  <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
+  <armgcc.compiler.warnings.InhibitAllWarnings>True</armgcc.compiler.warnings.InhibitAllWarnings>
+  <armgcc.compiler.miscellaneous.OtherFlags>-std=gnu11 --param max-inline-insns-single=500 -nostdlib</armgcc.compiler.miscellaneous.OtherFlags>
+  <armgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>DEBUG</Value>
+      <Value>F_CPU=48000000L</Value>
+      <Value>ARDUINO=10803</Value>
+      <Value>ARDUINO_SAM_ZERO</Value>
+      <Value>ARDUINO_ARCH_SAM</Value>
+      <Value>USB_VID=0x2a03</Value>
+      <Value>USB_PID=0x804e</Value>
+      <Value>USB_PRODUCT="\"Arduino M0\""</Value>
+      <Value>USB_MANUFACTURER="\"Arduino LLC\""</Value>
+      <Value>USBCON</Value>
+      <Value>SAMD_SERIES</Value>
+    </ListValues>
+  </armgcccpp.compiler.symbols.DefSymbols>
+  <armgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\arm\CMSIS\4.2.0\CMSIS\Include\</Value>
+      <Value>..\include\libraries\Servo</Value>
+      <Value>..\include\libraries\Servo\avr</Value>
+      <Value>..\include\libraries\Servo\nrf52</Value>
+      <Value>..\include\libraries\Servo\sam</Value>
+      <Value>..\include\libraries\Servo\samd</Value>
+      <Value>..\include\libraries\Servo\stm32f4</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\core\avr</Value>
+      <Value>..\include\core\USB</Value>
+      <Value>..\include\variants</Value>
+    </ListValues>
+  </armgcccpp.compiler.directories.IncludePaths>
+  <armgcccpp.compiler.optimization.level>Optimize for size (-Os)</armgcccpp.compiler.optimization.level>
+  <armgcccpp.compiler.optimization.OtherFlags>-fno-threadsafe-statics -fno-exceptions</armgcccpp.compiler.optimization.OtherFlags>
+  <armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <armgcccpp.compiler.optimization.PrepareDataForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareDataForGarbageCollection>
+  <armgcccpp.compiler.optimization.EnableLongCalls>False</armgcccpp.compiler.optimization.EnableLongCalls>
+  <armgcccpp.compiler.optimization.DebugLevel>Maximum (-g3)</armgcccpp.compiler.optimization.DebugLevel>
+  <armgcccpp.compiler.warnings.InhibitAllWarnings>True</armgcccpp.compiler.warnings.InhibitAllWarnings>
+  <armgcccpp.compiler.miscellaneous.OtherFlags>-std=gnu++11 --param max-inline-insns-single=500 -nostdlib</armgcccpp.compiler.miscellaneous.OtherFlags>
+  <armgcccpp.linker.general.UseNewlibNano>True</armgcccpp.linker.general.UseNewlibNano>
+  <armgcccpp.linker.general.AdditionalSpecs>Use syscall stubs (--specs=nosys.specs)</armgcccpp.linker.general.AdditionalSpecs>
+  <armgcccpp.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </armgcccpp.linker.libraries.Libraries>
+  <armgcccpp.linker.optimization.GarbageCollectUnusedSections>True</armgcccpp.linker.optimization.GarbageCollectUnusedSections>
+  <armgcccpp.linker.miscellaneous.LinkerFlags>-Wl,--cref -Os -Wl,--check-sections -Wl,--unresolved-symbols=report-all -Wl,--warn-common -Wl,--warn-section-align</armgcccpp.linker.miscellaneous.LinkerFlags>
+  <armgcccpp.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\SAMD21_DFP\1.2.276\samd21a\include</Value>
+      <Value>%24(PackRepoDir)\arm\CMSIS\4.2.0\CMSIS\Include\</Value>
+    </ListValues>
+  </armgcccpp.assembler.general.IncludePaths>
+  <armgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.assembler.debugging.DebugLevel>
+  <armgcccpp.preprocessingassembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\SAMD21_DFP\1.2.276\samd21a\include</Value>
+      <Value>%24(PackRepoDir)\arm\CMSIS\4.2.0\CMSIS\Include\</Value>
+    </ListValues>
+  </armgcccpp.preprocessingassembler.general.IncludePaths>
+  <armgcccpp.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.preprocessingassembler.debugging.DebugLevel>
+</ArmGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="include\core\Arduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\avr\dtostrf.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\avr\interrupt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\avr\io.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\avr\pgmspace.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\binary.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Client.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\delay.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\HardwareSerial.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\IPAddress.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\itoa.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Print.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Printable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\pulse.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Reset.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\RingBuffer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\SERCOM.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Server.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Stream.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Tone.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Uart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Udp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USB\PluggableUSB.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USB\samd21_host.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USB\SAMD21_USBDevice.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USB\USBAPI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USB\USBCore.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USB\USBDesc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USB\USB_host.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\WCharacter.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\WInterrupts.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\wiring.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\wiring_analog.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\wiring_constants.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\wiring_digital.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\wiring_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\wiring_shift.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\WMath.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\WString.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\WVariant.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Servo\avr\ServoTimers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Servo\nrf52\ServoTimers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Servo\samd\ServoTimers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Servo\sam\ServoTimers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Servo\Servo.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Servo\stm32f4\ServoTimers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\variants\pins_arduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\variants\variant.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\abi.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\avr\dtostrf.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\cortex_handlers.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\delay.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\hooks.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\IPAddress.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\itoa.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\main.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\new.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\PreprocessingAssembly\pulse_asm.S">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Print.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\pulse.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\pulse_asm.S">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Reset.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\RingBuffer.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\SERCOM.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\startup.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Stream.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Tone.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Uart.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\USB\CDC.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\USB\PluggableUSB.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\USB\samd21_host.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\USB\USBCore.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\WInterrupts.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_analog.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_digital.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_private.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_shift.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\WMath.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\WString.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\Servo\avr\Servo.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\Servo\nrf52\Servo.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\Servo\samd\Servo.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\Servo\sam\Servo.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\Servo\stm32f4\Servo.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\variants\variant.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="include\" />
+    <Folder Include="include\core\" />
+    <Folder Include="include\core\avr\" />
+    <Folder Include="include\core\USB\" />
+    <Folder Include="include\libraries\" />
+    <Folder Include="include\libraries\Servo\" />
+    <Folder Include="include\libraries\Servo\avr\" />
+    <Folder Include="include\libraries\Servo\nrf52\" />
+    <Folder Include="include\libraries\Servo\samd\" />
+    <Folder Include="include\libraries\Servo\sam\" />
+    <Folder Include="include\libraries\Servo\stm32f4\" />
+    <Folder Include="include\variants\" />
+    <Folder Include="src\" />
+    <Folder Include="src\core\" />
+    <Folder Include="src\core\avr\" />
+    <Folder Include="src\core\PreprocessingAssembly\" />
+    <Folder Include="src\core\USB\" />
+    <Folder Include="src\libraries\" />
+    <Folder Include="src\libraries\Servo\" />
+    <Folder Include="src\libraries\Servo\avr\" />
+    <Folder Include="src\libraries\Servo\nrf52\" />
+    <Folder Include="src\libraries\Servo\samd\" />
+    <Folder Include="src\libraries\Servo\sam\" />
+    <Folder Include="src\libraries\Servo\stm32f4\" />
+    <Folder Include="src\variants\" />
+    <Folder Include="src\variants\openocd_scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\variants\openocd_scripts\arduino_zero.cfg">
+      <SubType>compile</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>

@@ -1,0 +1,33 @@
+<launch>
+
+  <!-- Topside -->
+  <!-- joystick -> vectorCommand-->
+   <node pkg="rov_control_interface" type="drive_control" name="drive_control"/>
+   <!-- Joystick joy node -->
+  <node respawn="true" pkg="joy"
+        type="joy_node" name="rov_joy" >
+    <remap from="joy" to="joy/joy1"/>
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.1" />
+  </node>
+  <!--  Throttle joy node -->
+  <node respawn="true" pkg="joy"
+          type="joy_node" name="rov_throttle" >
+    <remap from="joy" to="joy/joy2"/>
+    <param name="dev" type="string" value="/dev/input/js1" />
+    <param name="deadzone" value="0.1" />
+  </node>
+  <!-- temp copilot interface -->
+  <node pkg="rqt_reconfigure" type="rqt_reconfigure" name="copilot_interface"/>
+  <!-- temp pilot interface -->
+  <node pkg="rqt_image_view" type="rqt_image_view" name="pilot_interface"/>
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
+
+
+  <!-- Bottomside -->
+  <!-- horizontal vector drive node -->
+  <node pkg="vector_drive" type="horiz_drive" name="horiz_drive"/>
+  <!-- vertical vector drive node -->
+  <node pkg="vector_drive" type="vert_drive" name="vert_drive"/>
+
+</launch>

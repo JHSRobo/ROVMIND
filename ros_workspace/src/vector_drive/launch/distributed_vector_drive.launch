@@ -1,0 +1,27 @@
+<launch>
+
+<!-- Not Working -->
+
+ <!-- Setup bottomside machine -->
+  <machine name="bottomside" address="bottomside" env-loader="~/Desktop/ROV_Test_Bench/scripts/env.sh"/>
+
+
+ <!-- joystick -> vectorCommand-->
+  <node pkg="rov_control_interface" type="drive_control" name="drive_control"/>
+
+ <!-- joy node -->
+  <node respawn="true" pkg="joy"
+        type="joy_node" name="rov_joy" >
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.1" />
+  </node>
+
+
+ <!-- temp copilot interface -->
+   <node pkg="rqt_reconfigure" type="rqt_reconfigure" name="rqt_reconfigure"/>
+
+ <!-- horizontal vector drive node (runs on bottomside machine) -->
+   <node machine="bottomside" pkg="vector_drive" type="horiz_drive" name="horiz_drive"/>
+
+
+</launch>
