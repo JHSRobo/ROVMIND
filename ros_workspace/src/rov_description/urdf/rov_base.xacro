@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- includes -->
+  <xacro:include filename="$(find rov_description)/urdf/common.urdf.xacro"/>
+  <xacro:include filename="$(find uuv_sensor_ros_plugins)/urdf/sensor_snippets.xacro"/>
+  <xacro:include filename="$(find uuv_gazebo_ros_plugins)/urdf/snippets.xacro"/>
+
+  <!-- Parameters -->
+  <xacro:property name="namespace" value="rov"/>
+  <xacro:property name="visual_mesh_file" value="file://$(find rov_description)/meshes/rov_frame.STL"/>
+  <xacro:property name="prop_mesh_file" value="file://$(find rov_description)/meshes/T100_cw_propeller.STL"/>
+
+  <!-- Constants -->
+  <xacro:property name="deg2rad" value="0.0174532925"/>
+  <xacro:property name="deg90" value="1.570796327"/>
+
+  <!-- Mass -->
+  <xacro:property name="mass" value="9.80543312"/>
+
+  <xacro:macro name="rov_base" params="namespace *gazebo inertial_reference_frame">
+    <!-- base_link according to ROS conventions: x forward, z up -->
+    <link name="${namespace}/base_link">
+      <inertial>
+        <mass value="${mass}"/>
+        <origin xyz="0.00056715 0.0005 -0.12"/> <!-- center of mass -->
+        <inertia ixx = "0.24968270"  ixy = "0.0"  ixz = "0.0"
+                 iyx = "0.0"  iyy = "0.19606323"  iyz = "0.0"
+                 izx = "0.0" izy = "0.0" izz = "0.22666109" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="${visual_mesh_file}" scale="1 1 1"/>
+        </geometry>
+      </visual>
+      <!-- bottom frame -->
+      <collision>
+        <origin xyz="0 0.0373 -0.25" rpy="0 0 ${deg90}"/>
+        <geometry>
+          <box size="0.375 0.220 -0.015"/>
+        </geometry>
+      </collision>
+      <!-- top frame -->
+      <collision>
+        <origin xyz="0 0.0373 -0.05" rpy="${deg90} 0 0"/>
+        <geometry><box size="0.32279107 0.05856 0.39804338"/></geometry>
+      </collision>
+      <!-- left front leg -->
+      <collision>
+        <origin xyz="0.1 0.21 -0.16" rpy="0 ${deg90} 0"/>
+        <geometry><box size="0.178 0.02 0.02"/></geometry>
+      </collision>
+      <!-- right front leg -->
+      <collision>
+        <origin xyz="-0.1 0.21 -0.16" rpy="0 ${deg90} 0"/>
+        <geometry><box size="0.178 0.02 0.02"/></geometry>
+      </collision>
+      <!-- left back leg -->
+      <collision>
+        <origin xyz="0.1 -0.135 -0.16" rpy="0 ${deg90} 0"/>
+        <geometry><box size="0.178 0.02 0.02"/></geometry>
+      </collision>
+      <!-- right back leg -->
+      <collision>
+        <origin xyz="-0.1 -0.135 -0.16" rpy="0 ${deg90} 0"/>
+        <geometry><box size="0.178 0.02 0.02"/></geometry>
+      </collision>
+
+    </link>
+
+    <gazebo reference="${namespace}/base_link">
+      <material>Gazebo/DarkGrey</material>
+    </gazebo>
+
+    <!-- Set up hydrodynamic plugin given as input parameter -->
+    <xacro:insert_block name="gazebo"/>
+
+    <!-- optional: plugin to test compare Gazebo's returned accelerations
+    <gazebo>
+      <plugin name="${namespace}_test_plugin" filename="libuuv_accelerations_test_plugin.so">
+        <link_name>${namespace}/base_link</link_name>
+      </plugin>
+    </gazebo> -->
+
+    <xacro:include filename="$(find rov_description)/urdf/rov_actuators.xacro"/>
+    <xacro:include filename="$(find rov_description)/urdf/rov_sensors.xacro"/>
+
+  </xacro:macro>
+</robot>

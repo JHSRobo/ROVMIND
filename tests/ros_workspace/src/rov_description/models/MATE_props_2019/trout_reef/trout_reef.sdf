@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+  <model name="trout_reef">
+    <static>true</static>
+    <link name="link">
+      <collision name="dam_collision">
+        <geometry>
+          <mesh>
+            <uri>model://MATE_props_2019/trout_reef/meshes/trout_reef.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <cast_shadows>true</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://MATE_props_2019/trout_reef/meshes/trout_reef.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

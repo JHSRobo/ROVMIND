@@ -1,0 +1,3 @@
+ - builder: doxygen
+   name: rov_control_interface
+   output_dir: rov_control_interface

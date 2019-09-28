@@ -1,0 +1,73 @@
+mat-slider {
+  width: 100%;
+}
+
+.mainsliders {
+  float: left;
+  width: 60%;
+  margin-left: 2%;
+  margin-top: 1% !important;
+}
+
+.secondarysliders {
+  float: right;
+  width: 36%;
+  margin-right: 2%;
+  margin-top: 1%;
+}
+
+.slider-card {
+  margin-top: 2%;
+  left: 2%;
+  width: 96%;
+  height: 30%;
+}
+
+h2 {
+  color: white;
+  font-size: 1em;
+}
+
+.blocker {
+  float: right;
+  height: 30%;
+  width: 100%;
+  z-index: 1000;
+  position: absolute;
+}
+
+.slider {
+  width: 94%;
+}
+
+.slidertext{
+  width: 20px;
+  float: right;
+  margin-top: 14px;
+  color: white;
+}
+
+::ng-deep .custom-slider .ng5-slider .ng5-slider-selection {
+  background: #496de0;
+}
+::ng-deep .custom-slider .ng5-slider .ng5-slider-pointer {
+  width: 8px;
+  height: 16px;
+  top: auto;
+  /* to remove the default positioning */
+  bottom: -5px;
+  background-color: cornflowerblue;
+}
+::ng-deep .custom-slider .ng5-slider .ng5-slider-pointer:after {
+  display: none;
+}
+::ng-deep .custom-slider .ng5-slider .ng5-slider-bubble {
+  bottom: 14px;
+}
+::ng-deep .custom-slider .ng5-slider .ng5-slider-limit {
+  font-weight: bold;
+  color: orange;
+}
+::ng-deep .custom-slider .ng5-slider .ng5-slider-tick.ng5-slider-selected {
+  background: orange;
+}

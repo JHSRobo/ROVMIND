@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:property name="cob" value="0.00037196 0.001 0.01"/>
+    <!-- ROV mass = 9.80543312 -->
+    <xacro:property name="volume" value="0.0099"/> <!-- ROV is slightly positively bouyant at 0.0099m^3 -->
+
+    <xacro:macro name="rov_hydro_model" params="namespace">
+        <link name="${namespace}/base_link">
+            <neutrally_buoyant>0</neutrally_buoyant>
+            <volume>${volume}</volume>
+            <box>
+              <width>0.61075</width>
+              <length>0.030617</length>
+              <height>0.46237</height>
+            </box>
+            <center_of_buoyancy>${cob}</center_of_buoyancy>
+            <hydrodynamic_model>
+
+              <!-- <type>sphere</type>
+              <radius>0.3</radius> -->
+
+              <type>fossen</type>
+              <!-- Added mass: see p.28 in Berg2012 -->
+              <!-- RexROV hydrodynamics with a scale factor of 0.006 - rough estimate but seems to work well-->
+              <added_mass>
+                   4.68      -0.041262  -0.61992  0.0512556   -0.99324 -0.0468198
+                  -0.0412638     7.332   0.30774    2.45664 -0.0350928   0.376356
+                  -0.61992     0.30756   21.9594  0.0366672   -2.31852   0.064644
+                   0.0512556   2.45664  0.036672     3.2094  -0.060162   0.126114
+                  -0.99324  -0.0350928  -2.31852  -0.060162    5.05614 -0.0066972
+                  -0.0468198  0.376356   0.06465   0.126114  -0.0066972   1.34592
+              </added_mass>
+              <!-- Linear damping: see p.31 in Berg2012 -->
+              <linear_damping>
+                  -0.44892 -0.41688 -4.3704 -1.6128 -1.85862 -0.63
+              </linear_damping>
+              <!-- Non-linear damping: see p.30 in Berg2012 -->
+              <!-- <quadratic_damping>
+                  -4.48932 -5.95518 -10.92606 -4.032 -4.64664 -3.13962
+              </quadratic_damping> -->
+              <quadratic_damping>
+                  -6 -8 -12 -25 -25 -5
+              </quadratic_damping>
+
+
+            </hydrodynamic_model>
+        </link>
+    </xacro:macro>
+
+</robot>

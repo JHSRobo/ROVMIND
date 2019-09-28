@@ -1,0 +1,34 @@
+<div class="shadow" [ngClass]="{'visible' : visible, 'hidden': !visible}">
+  <div class="dialog" [ngClass]="{'animated fadeInDown faster' : visible, '': !visible}">
+    <h2 class="title">Confirm?</h2>
+    <h3 class="content">Are you sure you want to continue?</h3>
+    <div class="buttons">
+      <button mat-raised-button color="warn" class="mat-raised-button" (click)="close()">
+        Cancel
+      </button>
+      <button mat-raised-button style="margin-left: 10px; color: white;" class="mat-raised-button green" (click)="confirm()">
+        Continue
+      </button>
+    </div>
+  </div>
+</div>
+<mat-card class="button-card">
+  <mat-card-content id="content">
+    <div class="powerwrapper">
+      <button mat-raised-button [ngClass]="{'green' : power, 'red': !power}" class="mat-raised-button powerbutton" (click)="openConfirm()">
+        <h2 class="my-3">Power</h2>
+      </button>
+    </div>
+    <div class="triplebuttonwrapper">
+      <button mat-raised-button color="primary" [ngClass]="{'green' : togglework, 'red': !togglework}" class="mat-raised-button systembutton otherbuttons" (click)="LightToggle()">
+        <h2 class="my-3">Work Light</h2>
+      </button>
+      <button mat-raised-button color="primary" [ngClass]="{'green' : togglesafety, 'red': !togglesafety}" class="mat-raised-button systembutton otherbuttons" (click)="SafetyToggle()">
+        <h2 class="my-3">Saftey Mode</h2>
+      </button>
+      <button mat-raised-button color="primary" [ngClass]="{'green' : togglepneu, 'red': !togglepneu}" class="mat-raised-button systembutton otherbuttons" (click)="PneumaticsToggle()">
+        <h2 class="my-3">Pneumatics</h2>
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

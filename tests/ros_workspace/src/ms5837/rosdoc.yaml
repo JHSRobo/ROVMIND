@@ -1,0 +1,3 @@
+ - builder: doxygen
+   name: ms5837
+   output_dir: ms5837

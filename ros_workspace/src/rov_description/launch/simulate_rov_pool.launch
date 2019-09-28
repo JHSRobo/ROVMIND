@@ -1,0 +1,12 @@
+<launch>
+
+  <include file="$(find rov_description)/launch/pool_world.launch"/>
+  <include file="$(find rov_description)/launch/spawn_rov.launch">
+    <arg name="x" value="-10"/>
+    <arg name="y" value="-20"/>
+    <arg name="z" value="-1"/>
+  </include>
+
+  <node name="simulation_interface" type="simulation_interface.py" pkg="rov_description"/>
+
+</launch>

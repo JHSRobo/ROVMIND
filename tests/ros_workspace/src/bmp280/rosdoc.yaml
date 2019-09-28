@@ -1,0 +1,3 @@
+ - builder: doxygen
+   name: bmp280
+   output_dir: bmp280

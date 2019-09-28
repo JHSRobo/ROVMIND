@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot name="realsense2_camera" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
+
+  <xacro:include filename="$(find realsense2_description)/urdf/_d415.urdf.xacro"/>
+
+  <link name="base_link" />
+  <sensor_d415 parent="base_link" camera_name="front_cam">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </sensor_d415>
+</robot>
