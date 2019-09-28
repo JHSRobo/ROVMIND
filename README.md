@@ -1,7 +1,10 @@
 # ROVMIND
 Main Jesuit Robotics ROS ROV software repository for core software systems.
+---------------------------------------------------
+Modular
 
-Modular\n
-Intelligent\n
-Networked\n
+Intelligent
+
+Networked
+
 D - To be determined...
