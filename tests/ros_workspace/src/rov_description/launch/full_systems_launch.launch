@@ -1,0 +1,16 @@
+<launch>
+
+  <include file="$(find rov_description)/launch/simulate_rov_pool.launch"/>
+
+
+  <!-- Topside -->
+  <include file="$(find launch_files)/launch/topside.launch"/>
+
+
+  <!-- Bottomside -->
+  <!-- horizontal vector drive node -->
+  <node pkg="vector_drive" type="horiz_drive" name="horiz_drive"/>
+  <!-- vertical vector drive node -->
+  <node pkg="vector_drive" type="vert_drive" name="vert_drive"/>
+
+</launch>

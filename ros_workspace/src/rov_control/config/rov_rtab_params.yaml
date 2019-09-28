@@ -1,0 +1,12 @@
+#http://wiki.ros.org/rtabmap_ros#Visual_Odometry
+
+#NOTE This file is NOT be working
+
+frame_id: "rov/base_link"
+odom_frame_id: "odom"
+publish_tf: "false"
+wait_for_transform: "false"
+
+config_path: "" #A config (ini) file with RTAB-Map's parameters.
+
+#http://wiki.ros.org/rtabmap_ros/Tutorials/Advanced%20Parameter%20Tuning

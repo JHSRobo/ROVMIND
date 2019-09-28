@@ -1,0 +1,25 @@
+<div class="blocker"></div>
+<mat-card class="slider-card">
+  <mat-card-content id="content">
+    <div class="mainsliders">
+      <h2>Voltage</h2>
+      <div class="custom-slider">
+        <ng5-slider class="slider" [value]="rovVoltage" [options]="options2"></ng5-slider>
+      </div>
+      <h2>Current</h2>
+      <div class="custom-slider">
+        <ng5-slider class="slider" [value]="rovCurrent" [options]="options"></ng5-slider>
+      </div>
+    </div>
+    <div class="secondarysliders">
+      <h2>Voltage Max</h2>
+      <div class="custom-slider">
+        <ng5-slider class="slider" [value]="maxVoltage" [options]="options2"></ng5-slider>
+      </div>
+      <h2>Current Max</h2>
+      <div class="custom-slider">
+        <ng5-slider class="slider" [value]="maxCurrent" [options]="options"></ng5-slider>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

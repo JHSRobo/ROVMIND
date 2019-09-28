@@ -1,0 +1,82 @@
+.button-card {
+  margin-top: 2%;
+  left: 2%;
+  width: 96%;
+  height: 59%;
+}
+
+.powerbutton {
+  background-color: #af3735;
+  width: 92%;
+  margin-left: 4%;
+  margin-top: 7%;
+}
+
+.otherbuttons {
+  margin-right: 1%;
+  width: 31.25%;
+  background-color: #496de0;
+}
+
+.triplebuttonwrapper{
+  margin-top: 8%;
+  margin-left: 4%;
+}
+
+h2 {
+  color: white;
+}
+
+.red {
+  background-color: #af3735 !important;
+}
+
+.green {
+  background-color: #4CAF50 !important;
+}
+
+.shadow {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(4, 4, 1, 0.5);
+  position: absolute;
+  z-index: 1000;
+  top: 0px;
+  left: 0px;
+}
+
+.dialog {
+  width: 30%;
+  height: 26%;
+  background-color: #313349 !important;
+  position: absolute;
+  z-index: 1000;
+  border-radius: 20px;
+  box-shadow: 0px 0px 67px 0px;
+  top: 243px;
+  left: 441px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.title {
+  margin-top: 19px;
+  margin-left: 29px;
+}
+
+.content {
+  color: white;
+  margin-top: 31px;
+  margin-left: 31px;
+}
+
+.buttons {
+  margin-top: 33px;
+  margin-left: 23px;
+}

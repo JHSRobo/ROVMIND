@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+  <model name="rock">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://MATE_props_2019/rock/meshes/rock.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <cast_shadows>true</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://MATE_props_2019/rock/meshes/rock.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classsmbus2_1_1smbus2_1_1i2c__msg.html" title="smbus2.smbus2.i2c_msg" alt="" coords="135,5,306,32"/>
+<area shape="rect" id="node3" href="$classsmbus2_1_1smbus2_1_1i2c__rdwr__ioctl__data.html" title="smbus2.smbus2.i2c_rdwr\l_ioctl_data" alt="" coords="135,57,306,98"/>
+<area shape="rect" id="node4" href="$classsmbus2_1_1smbus2_1_1i2c__smbus__ioctl__data.html" title="smbus2.smbus2.i2c_smbus\l_ioctl_data" alt="" coords="128,122,313,163"/>
+</map>

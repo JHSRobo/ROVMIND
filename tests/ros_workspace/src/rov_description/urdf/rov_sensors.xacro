@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:property name="namespace" value="rov"/>
+  <xacro:property name="d2r" value="0.01745329"/>
+
+  <!-- Pressure  -->
+  <!-- Reading in kilopascals NOT pascals -->
+  <xacro:default_pressure_macro namespace="${namespace}" parent_link="${namespace}/base_link">
+    <origin xyz="0.05 0.15 -0.22" rpy="${90*d2r} 0 0"/>
+  </xacro:default_pressure_macro>
+
+  <!-- IMU  -->
+  <link name="${namespace}/imu_link"/>
+  <joint name="base_imu_joint" type="fixed">
+    <parent link="${namespace}/base_link"/>
+    <child link="${namespace}/imu_link"/>
+    <origin xyz="0 0.1 -0.05" rpy="0 0 0"/>s
+  </joint>
+
+  <gazebo reference="${namespace}/imu_link">
+    <gravity>true</gravity>
+    <sensor name="${namespace}/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu</topicName>
+        <bodyName>${namespace}/imu_link</bodyName>
+        <updateRateHZ>60.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>${namespace}/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+
+  <!-- Mount 4 cameras -->
+  <!-- macro name cannot be camera!!! -->
+  <!-- Image lined up with the x axis -->
+  <xacro:macro name="camera_macro" params="number parent *origin">
+
+    <link name="${namespace}/camera${number}_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.01 0.03 0.02" />
+        </geometry>
+        <material name="Green">
+          <color rgba="0 0.8 0 1.0"/>
+        </material>
+      </visual>
+    </link>
+
+    <gazebo reference="${namespace}/camera${number}_link">
+      <material>Gazebo/Green</material>
+    </gazebo>
+
+    <joint name="${namespace}/camera${number}_joint" type="fixed">
+      <parent link="${parent}"/>
+      <child link="${namespace}/camera${number}_link"/>
+      <xacro:insert_block name="origin" />
+    </joint>
+
+    <gazebo reference="${namespace}/camera${number}_link">
+      <sensor type="camera" name="${namespace}/camera${number}">
+        <update_rate>30.0</update_rate>
+        <camera name="${namespace}/camera${number}">
+          <horizontal_fov>1.082</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>960</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+          <alwaysOn>true</alwaysOn>
+          <updateRate>0.0</updateRate>
+          <cameraName>camera${number}</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frameName>camera${number}_link</frameName>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>0.0</distortionK1>
+          <distortionK2>0.0</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionT1>0.0</distortionT1>
+          <distortionT2>0.0</distortionT2>
+        </plugin>
+      </sensor>
+    </gazebo>
+  </xacro:macro>
+
+  <xacro:camera_macro number="1" parent="${namespace}/frame_link">
+    <origin xyz="0 0.08 -0.05" rpy="0 0 ${90*d2r}"/>
+  </xacro:camera_macro>
+
+  <xacro:camera_macro number="3" parent="${namespace}/frame_link">
+    <origin xyz="0 -0.08 -0.05" rpy="0 0 ${-90*d2r}"/>
+  </xacro:camera_macro>
+
+  <xacro:camera_macro number="2" parent="${namespace}/frame_link">
+    <origin xyz="0.05 0 -0.04" rpy="0 0 ${0*d2r}"/>
+  </xacro:camera_macro>
+
+  <xacro:camera_macro number="4" parent="${namespace}/frame_link">
+    <origin xyz="-0.05 0 -0.04" rpy="0 0 ${180*d2r}"/>
+  </xacro:camera_macro>
+
+  <!-- Intel Realsense Cameras -->
+  <!-- RealSense D415 Camera -->
+  <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro"/>
+
+  <xacro:sensor_d435 parent="${namespace}/frame_link" camera_name="${namespace}/realsense_cam">
+    <origin xyz="0 0 -0.11" rpy="0 ${90*d2r} 0"/>
+  </xacro:sensor_d435>
+
+
+</robot>

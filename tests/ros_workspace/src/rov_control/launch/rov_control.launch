@@ -1,0 +1,100 @@
+<launch>
+
+<!-- Need to determine wether to use aligned image or not, optical flow or BOW -->
+
+<arg name="realRealsense" default="true"/>
+<!-- RTAB viewer not implemented yet-->
+<arg name="displayOdom" default="false"/>
+<!-- output "log" or "screen" -->
+<arg name="output_source" default="log"/>
+
+<arg name="rgb_image"       default="realsense_cam/color/image_raw"/>
+<arg name="rgb_camera_info" default="realsense_cam/color/camera_info"/>
+<arg name="depth_image"     default="realsense_cam/aligned_depth_to_color/image_raw"/>
+
+<include file="$(find rov_description)/launch/visualize_rov.launch">
+  <arg name="display" value="true"/>
+</include>
+
+<group ns="rov">
+
+  <group if="$(arg realRealsense)">
+    <!-- name of camera -->
+    <group ns="realsense_cam">
+      <!-- Start the intel realsense camera -->
+      <!-- See https://github.com/intel-ros/realsense/blob/development/README.md -->
+      <include file="$(find realsense2_camera)/launch/includes/nodelet.launch.xml">
+        <arg name="serial_no"           value=""/>
+        <arg name="json_file_path"      value=""/>
+        <arg name="tf_prefix"           value="realsense_cam"/>
+
+        <arg name="base_frame_id"       value="camera_link"/>
+
+        <arg name="depth_width"         value="848"/>
+        <arg name="depth_height"        value="480"/>
+        <arg name="enable_depth"        value="true"/>
+
+        <arg name="infra_width"         value="848"/>
+        <arg name="infra_height"        value="480"/>
+        <arg name="enable_infra1"       value="false"/>
+        <arg name="enable_infra2"       value="false"/>
+
+        <arg name="color_width"         value="848"/>
+        <arg name="color_height"        value="480"/>
+        <arg name="enable_color"        value="true"/>
+
+        <!-- 6,15,30,60,90 -->
+        <arg name="depth_fps"           value="15"/>
+        <arg name="infra_fps"           value="15"/>
+        <arg name="color_fps"           value="15"/>
+
+        <arg name="enable_pointcloud"         value="false"/>
+        <arg name="pointcloud_texture_stream" value="RS2_STREAM_COLOR"/>
+        <arg name="pointcloud_texture_index"  value="0"/>
+
+        <arg name="enable_sync"           value="false"/>
+        <arg name="align_depth"           value="true"/>
+
+        <arg name="filters"               value=""/>
+        <arg name="clip_distance"         value="10"/>
+        <arg name="initial_reset"         value="true"/>
+      </include>
+    </group>
+  </group>
+
+  <!-- Start gathering visual odometry -->
+  <node name="visual_odometer" pkg="rtabmap_ros" type="rgbd_odometry" output="$(arg output_source)">
+    <remap from="odom"            to="rtabmap/odom"/>
+    <remap from="rgb/image"       to="$(arg rgb_image)"/>
+    <remap from="rgb/camera_info" to="$(arg rgb_camera_info)"/>
+    <remap from="depth/image"     to="$(arg depth_image)"/>
+    <rosparam command="load"      file="$(find rov_control)/config/rov_rtab_params.yaml"/>
+    <param name="publish_tf"      type="bool" value="false"/>
+
+    <!-- http://wiki.ros.org/rtabmap_ros/Tutorials/Advanced%20Parameter%20Tuning -->
+    <param name="Odom/Strategy" value="1"/>
+    <!-- Correspondences 0=Features Matching, 1=Optical Flow -->
+    <param name="Vis/CorType" type="int" value="1"/>
+  </node>
+
+  <!-- Start Fusing IMU, VO, and Depth Sensor Odometry -->
+  <node name="odom_filter" pkg="robot_localization" type="ekf_localization_node" output="$(arg output_source)">
+    <rosparam command="load" file="$(find rov_control)/config/rov_robot_local_params.yaml"/>
+  </node>
+
+  <!-- <node if="$(arg displayOdom)" pkg="rtabmap_ros" type="rtabmapviz" name="rtabmapviz" args="-d ~/.ros/rtabmap_gui.ini" output="$(arg output_source)">
+    <param name="subscribe_rgbd"       type="bool"   value="true"/>
+    <param name="subscribe_odom_info"  type="bool"   value="true"/>
+    <param name="frame_id"             type="string" value="camera_link"/>
+    <param name="odom_frame_id"        type="string" value="odom"/>
+    <param name="queue_size"           type="int"    value="10"/>
+
+    <remap from="rgb/image"       to="$(arg rgb_image)"/>
+    <remap from="rgb/camera_info" to="$(arg rgb_camera_info)"/>
+    <remap from="depth/image"     to="$(arg depth_image)"/>
+    <remap from="odom"            to="visual_odom"/>
+  </node> -->
+
+</group>
+
+</launch>
