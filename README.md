@@ -3,10 +3,13 @@
 The goal of this project is to develop preseason software technologies based on ROS. This project will explorer development paths and verify new technologies before more permanent hardware development. Key areas of testing are cameras, vector drive, controllers, and PID algortihms. Additionally new workflows/integration tactics are to be tested and documented (Travis CI, Docker, node documentation, doxygen). This project will expire at the beginning of the 2018-2019 robotics season.   
 
 Release    
+[![CodeFactor](https://www.codefactor.io/repository/github/jhsrobo/rovmind/badge/release)](https://www.codefactor.io/repository/github/jhsrobo/rovmind/overview/release)
 
-Master     
+Master  
+[![CodeFactor](https://www.codefactor.io/repository/github/jhsrobo/rovmind/badge/master)](https://www.codefactor.io/repository/github/jhsrobo/rovmind/overview/master)
 
-Development     
+Development  
+[![CodeFactor](https://www.codefactor.io/repository/github/jhsrobo/rovmind/badge/development)](https://www.codefactor.io/repository/github/jhsrobo/rovmind/overview/development)
 
 ## Release Page and Feature Addition Form
 
