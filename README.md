@@ -13,6 +13,8 @@ Development
 
 ## Release Page and Feature Addition Form
 
+test/
+
 All latest releases will be posted on the [release page](https://jhsrobo.github.io/releasepage/). There is also a feature addition form on this page so you can submit a feature that you want to be in the next release. Please only add the feature if it is complete and in development.
 
 ## Getting Started
