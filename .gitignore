@@ -70,3 +70,5 @@ CATKIN_IGNORE
 /ros_workspace/src/tcu_touchscreen/
 /ros_workspace/src/tcu_board_msgs/
 /ros_workspace/src/vector_drive/
+/ros_workspace/src/uuv_simulator/
+/ros_workspace/src/depth_hold/
