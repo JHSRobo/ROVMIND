@@ -20,7 +20,7 @@
      <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
      
  <!-- camera_viewer -->
-     <node pkg="camera_viewer" type="camera_viewer.py" name="camera_viewer"/>
+     <node pkg="camera_viewer" type="switcher.py" name="camera_viewer"/>
 
 </launch>
 
