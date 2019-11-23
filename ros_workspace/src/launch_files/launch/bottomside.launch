@@ -1,4 +1,6 @@
 <launch>
+ <!-- Launch RPICamera Streamer -->
+   <node name="foo" pkg="camera_streamer_start" type="start_camera.sh" />
 
  <!-- horizontal vector drive node -->
    <node pkg="vector_drive" type="horiz_drive" name="horiz_drive"/>
@@ -12,20 +14,20 @@
    </node>
 
    <!-- camera switching and tools -->
-   <node pkg="hardware_interface" ns="rov" type="cameraSwitch.py" name="cameraSwitch"/>
-   <node pkg="hardware_interface" ns="rov" type="hw_electromagnet_control.py" name="hw_electromagnet_control"/>
-   <node pkg="hardware_interface" ns="rov" type="trout_grout_control.py" name="trout_grout_control"/>
+   <!-- <node pkg="hardware_interface" ns="rov" type="cameraSwitch.py" name="cameraSwitch"/> -->
+   <!-- <node pkg="hardware_interface" ns="rov" type="hw_electromagnet_control.py" name="hw_electromagnet_control"/> -->
+   <!-- <node pkg="hardware_interface" ns="rov" type="trout_grout_control.py" name="trout_grout_control"/> -->
 
 
   <!-- start rpi pilot cameras -->
-  <node type="raspicam_node" pkg="raspicam_node" name="raspicam_node" output="screen">
-    <param name="camera_info_url" value="package://raspicam_node/camera_info/camerav2_1280x960.yaml"/>
-    <param name="width" value="1280"/>
-    <param name="height" value="960"/>
-    <param name="quality" value="100"/>
-    <param name="framerate" value="30"/>
-    <param name="camera_frame_id" value="pilot_cam"/>
-  </node>
+  <!-- <node type="raspicam_node" pkg="raspicam_node" name="raspicam_node" output="screen"> -->
+  <!--  <param name="camera_info_url" value="package://raspicam_node/camera_info/camerav2_1280x960.yaml"/> -->
+  <!--  <param name="width" value="1280"/> -->
+  <!--  <param name="height" value="960"/> -->
+  <!--  <param name="quality" value="100"/> -->
+  <!--  <param name="framerate" value="30"/> -->
+  <!--  <param name="camera_frame_id" value="pilot_cam"/> -->
+  <!-- </node> -->
 
  <!-- start reading sensor data from DRQ1250s -->
  <!-- respawn setup to restart the node every 30 seconds if it dies-->
@@ -35,15 +37,15 @@
 
  <!-- start reading the depth sensor -->
  <!-- respawn setup to restart the node every 30 seconds if it dies-->
- <node pkg="ms5837" name="depth_sensor" type="ms5837_ros.py" respawn="true" respawn_delay="30"/>
+ <!-- <node pkg="ms5837" name="depth_sensor" type="ms5837_ros.py" respawn="true" respawn_delay="30"/> -->
 
  <!-- launch all the sensors -->
  <!-- respawn setup to restart the node every 30 seconds if it dies-->
  <!-- <node type="sensor-hat.py" pkg="sensor_readout" name="sensor_interface" respawn="true" respawn_delay="30"/> -->
 
- <node type="bno055_ros.py" pkg="bno055" name="imu" respawn="true" respawn_delay="30"/>
- <node pkg="sen10972" ns="rov" type="phSensor.py" name="phsensor"/>
- <node type="bmp280_ros.py" pkg="bmp280" name="bmp280"/>
- <node type="sht31_ros.py" pkg="sht31" name="sht31"/>
+ <!-- <node type="bno055_ros.py" pkg="bno055" name="imu" respawn="true" respawn_delay="30"/> -->
+ <!-- <node pkg="sen10972" ns="rov" type="phSensor.py" name="phsensor"/> -->
+ <!-- <node type="bmp280_ros.py" pkg="bmp280" name="bmp280"/> -->
+ <!-- <node type="sht31_ros.py" pkg="sht31" name="sht31"/> -->
 
 </launch>
