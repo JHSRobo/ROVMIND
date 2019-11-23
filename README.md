@@ -41,7 +41,7 @@ Code Blocks IDE on rpi ubuntu mate
 
 On the RPI turn on the CSI, SPI, I2C, and UART interfaces using `sudo raspi-config`
 
-Setup the I2C interface on Ubutnu Mate
+Setup the I2C interface on Ubuntu Mate
 * `sudo apt-get install python-smbus`
 * `cd /boot/config.txt`
 * uncomment `dtparam=i2c_arm=off` and change to `dtparam=i2c_arm=on`
@@ -104,17 +104,9 @@ On your Raspberry Pi 3B make sure you are running ubuntu mate 16.04 (image here 
 ### Simulation Setup
 
 * See https://uuvsimulator.github.io/installation.html#creating-and-configuring-a-workspace
-* Check to see if gazebo version 7 is installed `gazebo --version`
+* Check to see if gazebo version 9 is installed `gazebo --version`
 * Run `sudo apt-get update` and `sudo apt-get upgrade`
-* In the ros_workspace run `git submodule init` and `git submodule update`
-* In ros_workspace run `rosdep install --from-paths src --ignore-src --rosdistro=kinetic -y`
-* Run `sudo apt-get install protobuf-compiler protobuf-c-compiler`
-* Connect a powerfull computer to the ROS Master by running `export ROS_MASTER_URI=http://ip_to_master:11311` and `export ROS_IP=ip_of_computer`
-   * Make sure the master and simulation computers can ping each other and if network problems persist make sure the computers can ssh into each other
-* Run `catkin_make`
-   * If you receive this error `make[2]: *** No rule to make target '/home/michael/catkin_ws/src/uuv_simulator/uuv_gazebo_plugins/uuv_gazebo_plugins/PROTOBUF_PROTOC_EXECUTABLE-NOTFOUND', needed by 'uuv_simulator/uuv_gazebo_plugins uuv_gazebo_plugins/Double.pb.cc'.  Stop. CMakeFiles/Makefile2:4699: recipe for target 'uuv_simulator/uuv_gazebo_plugins/uuv_gazebo_plugins/CMakeFiles/uuv_gazebo_plugins_msgs.dir/all' failed` then remove the /build /devel and /install folders with `rm -R` and retry steps 1 - 8
-* `catkin_make install` <- May not be needed (check on next install)
-* `source devel/setup.bash`
+* Run `sudo apt-get install ros-melodic-uuv-simulator`
 * `roslaunch rov_description full_systems_launch.launch` or `roslaunch rov_description partial_systems_launch.launch` and `roslaunch simulate_rov.launch` on another machine
 * `rosrun rov_description simulation_interface.py`
 
@@ -143,7 +135,7 @@ Note: The resolution of the realsense camera should always run at 1280x720 for t
 
 ## Acknowledgments
 
-* README Tempalte source https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
+* README Template source https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
 * Inspiration
 * etc
 
