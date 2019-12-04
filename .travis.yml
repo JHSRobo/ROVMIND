@@ -10,6 +10,7 @@
 # Travis environment variables in general.
 #
 # Author: Michael Equi <equim20@student.jhs.net>
+#         Alden Parker <parkera21@student.jhs.net>
 #
 # NOTE: The build lifecycle on Travis.ci is something like this:
 #    before_install
@@ -32,8 +33,8 @@ cache:
 language: generic
 matrix:
   include:
-  - name: "Xenial melodic"
-    dist: xenial
+  - name: "Bionic melodic"
+    dist: bionic
     env: ROS_DISTRO=melodic
 
 # Configuration variables. All variables are global now, but this can be used to
