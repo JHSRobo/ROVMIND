@@ -75,6 +75,17 @@ before_install:
   # Prepare rosdep to install dependencies.
   - sudo rosdep init
   - rosdep update
+  # Packages
+  - cd $CI_SOURCE_PATH
+  - mkdir tmp
+  - cd tmp
+  - git config --global user.name "aldenparkertravis"
+  - git config --global user.password "JHSRobo123"
+  - git clone https://github.com/JHSRobo/releasepage.git
+  - cd releasepage
+  - ./travis_build.sh
+  - cd $CI_SOURCE_PATH
+  - rm -rf tmp
 
 # Go to the ros_# trigger a build matrix for different ROS distributions if desired.workspace and perform a rosdep install for all package dependencies
 install:
@@ -93,16 +104,6 @@ install:
 # non-zero when a test fails (which notifies Travis the build failed).
 script:
   - source /opt/ros/$ROS_DISTRO/setup.bash
-  - cd $CI_SOURCE_PATH
-  - mkdir tmp
-  - cd tmp
-  - git config --global user.name "aldenparkertravis"
-  - git config --global user.password "JHSRobo123"
-  - git clone https://github.com/JHSRobo/releasepage.git
-  - cd releasepage
-  - ./travis_build.sh
-  - cd $CI_SOURCE_PATH
-  - rm -rf tmp
   - cd $CI_SOURCE_PATH/ros_workspace
   - catkin_make
   # Run the tests, ensuring the path is set correctly.
