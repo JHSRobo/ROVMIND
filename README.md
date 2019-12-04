@@ -8,9 +8,6 @@ Release
 Master  
 [![CodeFactor](https://www.codefactor.io/repository/github/jhsrobo/rovmind/badge/master)](https://www.codefactor.io/repository/github/jhsrobo/rovmind/overview/master)
 
-Development  
-[![CodeFactor](https://www.codefactor.io/repository/github/jhsrobo/rovmind/badge/development)](https://www.codefactor.io/repository/github/jhsrobo/rovmind/overview/development)
-
 ## Release Page and Feature Addition Form
 
 All latest releases will be posted on the [release page](https://jhsrobo.github.io/releasepage/). There is also a feature addition form on this page so you can submit a feature that you want to be in the next release. Please only add the feature if it is complete and in development.
