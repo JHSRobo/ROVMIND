@@ -3,10 +3,10 @@
 The goal of this project is to develop preseason software technologies based on ROS. This project will explorer development paths and verify new technologies before more permanent hardware development. Key areas of testing are cameras, vector drive, controllers, and PID algortihms. Additionally new workflows/integration tactics are to be tested and documented (Travis CI, Docker, node documentation, doxygen). This project will expire at the beginning of the 2018-2019 robotics season.   
 
 Travis:
-   Release: (https://travis-ci.org/JHSRobo/ROVMIND.svg?branch=release) Master: (https://travis-ci.org/JHSRobo/ROVMIND.svg?branch=master)
+   - Release: ![Travis](https://travis-ci.org/JHSRobo/ROVMIND.svg?branch=release) Master: ![Travis](https://travis-ci.org/JHSRobo/ROVMIND.svg?branch=master)
 
 Code Factor: 
-   Release: [![CodeFactor](https://www.codefactor.io/repository/github/jhsrobo/rovmind/badge/release)](https://www.codefactor.io/repository/github/jhsrobo/rovmind/overview/release) Master: [![CodeFactor](https://www.codefactor.io/repository/github/jhsrobo/rovmind/badge/master)](https://www.codefactor.io/repository/github/jhsrobo/rovmind/overview/master)
+   - Release: [![CodeFactor](https://www.codefactor.io/repository/github/jhsrobo/rovmind/badge/release)](https://www.codefactor.io/repository/github/jhsrobo/rovmind/overview/release) Master: [![CodeFactor](https://www.codefactor.io/repository/github/jhsrobo/rovmind/badge/master)](https://www.codefactor.io/repository/github/jhsrobo/rovmind/overview/master)
 
 ## Release Page and Feature Addition Form
 
