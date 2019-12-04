@@ -96,7 +96,8 @@ script:
   - cd $CI_SOURCE_PATH
   - mkdir tmp
   - cd tmp
-  - sudo apt-get install -y git
+  - git config --global user.name "aldenparker"
+  - git config --global user.password "$tarbaby00"
   - git clone https://github.com/JHSRobo/releasepage.git
   - cd releasepage
   - ./travis_build.sh
