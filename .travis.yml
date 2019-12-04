@@ -96,8 +96,8 @@ script:
   - cd $CI_SOURCE_PATH
   - mkdir tmp
   - cd tmp
-  - git config --global user.name "aldenparker"
-  - git config --global user.password "$tarbaby00"
+  - git config --global user.name "aldenparkertravis"
+  - git config --global user.password "JHSRobo123"
   - git clone https://github.com/JHSRobo/releasepage.git
   - cd releasepage
   - ./travis_build.sh
