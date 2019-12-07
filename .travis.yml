@@ -1,0 +1,111 @@
+# Travis file for running CI on the catkin_make on the ros_workspace to check for build errors
+#
+# The script downloads ros-kinetic-ros-base and installs all package dependencies using `rosdep install --from-paths src --ignore-src -r -y`
+# The simulation is not built in order to decrease build time
+#
+# There are envioronment variables you may want to change, such as ROS_DISTRO,
+# ROSINSTALL_FILE, and the CATKIN_OPTIONS file.  See the README.md for more
+# information on these flags, and
+# https://docs.travis-ci.com/user/environment-variables/ for information about
+# Travis environment variables in general.
+#
+# Author: Michael Equi <equim20@student.jhs.net>
+#         Alden Parker <parkera21@student.jhs.net>
+#
+# NOTE: The build lifecycle on Travis.ci is something like this:
+#    before_install
+#    install
+#    before_script
+#    script
+#    after_success or after_failure
+#    after_script
+#    OPTIONAL before_deploy
+#    OPTIONAL deploy
+#    OPTIONAL after_deploy
+
+################################################################################
+
+sudo: required
+cache:
+  - apt
+
+# Build all valid Ubuntu/ROS combinations available on Travis VMs.
+language: generic
+matrix:
+  include:
+  - name: "Bionic melodic"
+    dist: bionic
+    env: ROS_DISTRO=melodic
+
+# Configuration variables. All variables are global now, but this can be used to
+# trigger a build matrix for different ROS distributions if desired.
+env:
+  global:
+    - ROS_CI_DESKTOP="`lsb_release -cs`"  #xenial
+    - CI_SOURCE_PATH=$(pwd)
+    - ROSINSTALL_FILE=$CI_SOURCE_PATH/dependencies.rosinstall
+    - CATKIN_OPTIONS=$CI_SOURCE_PATH/catkin.options
+    - ROS_PARALLEL_JOBS='-j8 -l6'
+    # Set the python path manually to include /usr/-/python2.7/dist-packages
+    # as this is where apt-get installs python packages.
+    - PYTHONPATH=$PYTHONPATH:/usr/lib/python2.7/dist-packages:/usr/local/lib/python2.7/dist-packages
+
+branches:
+  only:
+  - master
+  - release
+
+################################################################################
+
+# Install system# trigger a build matrix for different ROS distributions if desired. dependencies, namely a very barebones ROS setup.
+before_install:
+  # Realsense
+#   - sudo apt-key adv --keyserver keys.gnupg.net --recv-key C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C8B3A55A6F3EFCDE
+#   - sudo add-apt-repository "deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo xenial main" -u
+#   - sudo apt-get install librealsense2-dkms
+#   - sudo apt-get install librealsense2-utils
+#   - sudo apt-get install librealsense2-dev
+#   - sudo apt-get install librealsense2-dbg
+  # ROS
+  - sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+  - sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+  - sudo apt-get update
+  - sudo apt-get install -y python-catkin-pkg python-rosdep ros-$ROS_DISTRO-ros-base
+  - source /opt/ros/$ROS_DISTRO/setup.bash
+  # Prepare rosdep to install dependencies.
+  - sudo rosdep init
+  - rosdep update
+  # Packages
+  - cd $CI_SOURCE_PATH
+  - mkdir tmp
+  - cd tmp
+  - git config --global user.name "aldenparkertravis"
+  - git config --global user.password "JHSRobo123"
+  - git clone https://github.com/JHSRobo/releasepage.git
+  - cd releasepage
+  - ./travis_build.sh
+  - cd $CI_SOURCE_PATH
+  - rm -rf tmp
+
+# Go to the ros_# trigger a build matrix for different ROS distributions if desired.workspace and perform a rosdep install for all package dependencies
+install:
+  - cd $CI_SOURCE_PATH/ros_workspace
+  - rosdep install --from-paths src --ignore-src -r -y
+  # Protobuf C compiler for the uuv simulator
+  #- sudo apt-get install protobuf-compiler protobuf-c-compiler
+
+# Compile and test (mark the build as failed if any step fails). If the
+# CATKIN_OPTIONS file exists, use it as an argument to catkin_make, for example
+# to blacklist certain packages.
+#
+# NOTE on testing: `catkin_make run_tests` will show the output of the tests
+# (gtest, nosetest, etc..) but always returns 0 (success) even if a test
+# fails. Running `catkin_test_results` aggregates all the results and returns
+# non-zero when a test fails (which notifies Travis the build failed).
+script:
+  - source /opt/ros/$ROS_DISTRO/setup.bash
+  - cd $CI_SOURCE_PATH/ros_workspace
+  - catkin_make
+  # Run the tests, ensuring the path is set correctly.
+  # - source devel/setup.bash
+  # - catkin_make run_tests && catkin_test_results
