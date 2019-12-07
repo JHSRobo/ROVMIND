@@ -30,5 +30,4 @@
  <!-- <node pkg="sen10972" ns="rov" type="phSensor.py" name="phsensor"/> -->
  <!-- <node type="bmp280_ros.py" pkg="bmp280" name="bmp280" respawn_delay="30"/> -->
  <!-- <node type="sht31_ros.py" pkg="sht31" name="sht31"/> -->
- <include file="$(find depth_hold)/launch/depth_hold.launch"/>
 </launch>
