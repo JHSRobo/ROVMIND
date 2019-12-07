@@ -21,6 +21,9 @@
      
  <!-- camera_viewer -->
      <node pkg="camera_viewer" type="switcher.py" name="camera_viewer"/>
+  
+  <!-- depth hold -->
+      <include file="$(find depth_hold)/launch/depth_hold.launch"/>
 
 </launch>
 
