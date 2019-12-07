@@ -1,5 +1,6 @@
 <launch>
    <node name="foo" pkg="camera_streamer" type="startup.sh" />
+
  <!-- horizontal vector drive node -->
    <node pkg="vector_drive" type="horiz_drive" name="horiz_drive"/>
 
