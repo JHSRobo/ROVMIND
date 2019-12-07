@@ -23,6 +23,8 @@ FOLLOW:
 
 ### Launching/Running
 
+Install ROS dependenceis: `rosdep install --from-paths src --ignore-src -r -y`
+
 Follow Test Bench Setup Steps if Running on Test Bench
 * https://docs.google.com/document/d/1srYgNUE4k3DVHkUv1TwUJawfUWw6kGkveDhAvulWMZ0/edit#heading=h.wyzbdb7zgifi
 
@@ -32,9 +34,6 @@ Locally:
 ### Prerequisites
 
 What things you should to install to develop and run software and how to install them
-
-Code Blocks IDE on rpi ubuntu mate
-* `sudo apt-get install codeblocks`
 
 On the RPI turn on the CSI, SPI, I2C, and UART interfaces using `sudo raspi-config`
 

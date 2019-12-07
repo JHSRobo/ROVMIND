@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/copilot_page" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/realsense-ros" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/sht31" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/tcu_board_msgs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/tcu_touchscreen" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/vector_drive" vcs="Git" />
+  </component>
+</project>
