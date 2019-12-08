@@ -110,8 +110,13 @@ On your Raspberry Pi 3B make sure you are running ubuntu mate 16.04 (image here 
 
 * When building bottomside with catkin_make, type the command catkin_make -DCATKIN_WHITELIST_PACKAGES="vector_drive;hardware_interface;raspicam_node;drq1250;ms5837;sensor_readout"
 
-### Intel Realsense Setup instructions
-## Ubuntu
+## Intel Realsense Setup instructions
+### Ubuntu for T265
+
+* Follow the driver installation instructions: https://github.com/intel-ros/realsense
+* Test using `roslaunch realsense2_camera demo_t265.launch`
+
+### Ubuntu for D435 - OLD
 
 * Follow the driver installation instructions: https://github.com/intel-ros/realsense
 * Test using `roslaunch realsense2_camera rs_camera.launch`

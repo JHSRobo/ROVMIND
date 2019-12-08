@@ -13,9 +13,8 @@
 
  <!-- start reading sensor data from DRQ1250s -->
  <!-- respawn setup to restart the node every 30 seconds if it dies-->
- <!-- <node pkg="drq1250" type="drq1250_ros.py" name="drq1250" args="0x08" respawn="true" respawn_delay="30" ns="rov/drq1250_1"/> -->
-
- <!-- <node pkg="drq1250" type="drq1250_ros.py" name="drq1250" args="0x0A" respawn="true" respawn_delay="30" ns="rov/drq1250_2"/> -->
+ <node pkg="drq1250" type="drq1250_ros.py" name="drq1250" args="0x08" respawn="true" respawn_delay="30" ns="rov/drq1250_1"/>
+ <node pkg="drq1250" type="drq1250_ros.py" name="drq1250" args="0x0A" respawn="true" respawn_delay="30" ns="rov/drq1250_2"/>
 
  <!-- start reading the depth sensor -->
  <!-- respawn setup to restart the node every 30 seconds if it dies-->
@@ -26,8 +25,20 @@
  <!-- <node type="sensor-hat.py" pkg="sensor_readout" name="sensor_interface" respawn="true" respawn_delay="30"/> -->
 
  <node type="bno055_ros.py" pkg="bno055" name="imu" respawn="true" respawn_delay="30"/>
- <!-- <node pkg="sen10972" ns="rov" type="phSensor.py" name="phsensor"/> -->
  <node type="bmp280_ros.py" pkg="bmp280" name="bmp280" respawn_delay="30"/>
  <!-- <node type="sht31_ros.py" pkg="sht31" name="sht31"/> -->
+
+  <!-- Run realsense T265 on bottomside -->
+<!--  <include file="$(find realsense2_camera)/launch/rs_t265.launch"> -->
+<!--       <arg name="device_type"         value="t265"/> -->
+<!--       <arg name="camera"              value="t265"/> -->
+<!--       <arg name="tf_prefix"           value="rov/$(arg camera)"/> -->
+
+<!--       <arg name="enable_fisheye1"     value="true"/> -->
+<!--       <arg name="enable_fisheye2"     value="true"/> -->
+
+<!--       <arg name="unite_imu_method"    value="true"/> -->
+<!--  </include> -->
+
 
 </launch>
