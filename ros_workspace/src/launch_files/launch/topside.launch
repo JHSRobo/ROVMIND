@@ -29,12 +29,12 @@
      <include file="$(find realsense2_camera)/launch/rs_t265.launch">
           <arg name="device_type"         value="t265"/>
           <arg name="camera"              value="t265"/>
-          <arg name="tf_prefix"           value="rov/$(arg camera)"/>
+          <arg name="tf_prefix"           value="rov/t265"/>
 
           <arg name="enable_fisheye1"     value="true"/>
           <arg name="enable_fisheye2"     value="true"/>
 
-          <arg name="unite_imu_method"    value="true"/>
+          <arg name="unite_imu_method"    value="linear_interpolation"/>
      </include>
 
 
