@@ -145,3 +145,6 @@ fabric.properties
 /ros_workspace/src/uuv_simulator/
 /ros_workspace/src/depth_hold/
 /ros_workspace/src/realsense-ros/
+/ros_workspace/src/rov_localization/
+/ros_workspace/src/rov_description/
+
