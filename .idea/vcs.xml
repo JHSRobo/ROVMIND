@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/bmp280" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/bno055" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/copilot_interface" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/copilot_page" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/depth_hold" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/doc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/hardware_interface" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/ms5837" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/realsense-ros" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/rov_control" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/rov_control_interface" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/rov_description" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/rov_localization" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/sht31" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/tcu_board_msgs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/tcu_touchscreen" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/vector_drive" vcs="Git" />
+  </component>
+</project>
