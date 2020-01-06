@@ -1,4 +1,5 @@
 <launch>
+   <node name="foo" pkg="camera_streamer" type="startup.sh" />
 
  <!-- horizontal vector drive node -->
    <node pkg="vector_drive" type="horiz_drive" name="horiz_drive"/>
@@ -18,7 +19,7 @@
 
  <!-- start reading the depth sensor -->
  <!-- respawn setup to restart the node every 30 seconds if it dies-->
- <node pkg="ms5837" name="depth_sensor" type="ms5837_ros.py" respawn="true" respawn_delay="30"/>
+ <node pkg="ms5837" name="depth_sensor" type="ms5837_ros.py" respawn="true"/>
 
  <!-- launch all the sensors -->
  <!-- respawn setup to restart the node every 30 seconds if it dies-->
@@ -39,6 +40,4 @@
 
 <!--       <arg name="unite_imu_method"    value="linear_interpolation"/> -->
 <!--  </include> -->
-
-
 </launch>
