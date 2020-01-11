@@ -1,5 +1,5 @@
 <launch>
-   <node name="foo" pkg="camera_streamer" type="startup.sh" />
+   <!-- <node name="foo" pkg="camera_streamer" type="startup.sh" />-->
 
  <!-- horizontal vector drive node -->
    <node pkg="vector_drive" type="horiz_drive" name="horiz_drive"/>
@@ -14,8 +14,8 @@
 
  <!-- start reading sensor data from DRQ1250s -->
  <!-- respawn setup to restart the node every 30 seconds if it dies-->
- <node pkg="drq1250" type="drq1250_ros.py" name="drq1250" args="0x08" respawn="true" respawn_delay="30" ns="rov/drq1250_1"/>
- <node pkg="drq1250" type="drq1250_ros.py" name="drq1250" args="0x0A" respawn="true" respawn_delay="30" ns="rov/drq1250_2"/>
+ <!-- <node pkg="drq1250" type="drq1250_ros.py" name="drq1250" args="0x08" respawn="true" respawn_delay="30" ns="rov/drq1250_1"/>-->
+ <!-- <node pkg="drq1250" type="drq1250_ros.py" name="drq1250" args="0x0A" respawn="true" respawn_delay="30" ns="rov/drq1250_2"/>-->
 
  <!-- start reading the depth sensor -->
  <!-- respawn setup to restart the node every 30 seconds if it dies-->
