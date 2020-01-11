@@ -19,7 +19,9 @@
 
  <!-- start reading the depth sensor -->
  <!-- respawn setup to restart the node every 30 seconds if it dies-->
- <node pkg="ms5837" name="depth_sensor" type="ms5837_ros.py" respawn="true"/>
+    <node pkg="ms5837" name="depth_sensor" type="ms5837_ros.py" respawn="true">
+        <param name="fluidDensity" value="1000"/>
+    </node>
 
  <!-- launch all the sensors -->
  <!-- respawn setup to restart the node every 30 seconds if it dies-->
