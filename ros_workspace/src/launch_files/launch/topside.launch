@@ -19,8 +19,8 @@
     <!-- camera_viewer -->
     <node pkg="camera_viewer" type="switcher.py" name="camera_viewer"/>
   
-    <!-- depth hold -->
-    <include file="$(find depth_hold)/launch/depth_hold.launch"/>
+    <!-- motion pids -->
+    <include file="$(find motion_pids)/launch/motion_pids.launch"/>
 
     <!-- Run realsense T265 on topside -->
     <include file="$(find rov_localization)/launch/rov_realsense.launch"/>
