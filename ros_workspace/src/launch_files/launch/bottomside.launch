@@ -27,7 +27,7 @@
  <!-- respawn setup to restart the node every 30 seconds if it dies-->
  <!-- <node type="sensor-hat.py" pkg="sensor_readout" name="sensor_interface" respawn="true" respawn_delay="30"/> -->
 
- <node type="bno055_ros.py" pkg="bno055" name="imu" respawn="true" respawn_delay="30"/>
+ <!-- <node type="bno055_ros.py" pkg="bno055" name="imu" respawn="true" respawn_delay="30"/> -->
  <node type="bmp280_ros.py" pkg="bmp280" name="bmp280" respawn_delay="30"/>
  <!-- <node type="sht31_ros.py" pkg="sht31" name="sht31"/> -->
 
