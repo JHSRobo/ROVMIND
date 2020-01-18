@@ -9,6 +9,7 @@
     <mapping directory="$PROJECT_DIR$/ros_workspace/src/depth_hold" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ros_workspace/src/doc" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ros_workspace/src/hardware_interface" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ros_workspace/src/motion_pids" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ros_workspace/src/ms5837" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ros_workspace/src/realsense-ros" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ros_workspace/src/rov_control" vcs="Git" />

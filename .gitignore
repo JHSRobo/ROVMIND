@@ -147,4 +147,6 @@ fabric.properties
 /ros_workspace/src/realsense-ros/
 /ros_workspace/src/rov_localization/
 /ros_workspace/src/rov_description/
+/ros_workspace/src/motion_pids/
+
 
