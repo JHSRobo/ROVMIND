@@ -20,7 +20,12 @@
  <!-- start reading the depth sensor -->
  <!-- respawn setup to restart the node every 30 seconds if it dies-->
     <node pkg="ms5837" name="depth_sensor" type="ms5837_ros.py" respawn="true">
-        <param name="fluidDensity" value="1000"/>
+        <param name="fluid_density" value="1000"/>
+        <param name="depth_variance" value="0.001"/>
+        <param name="tf_frame" value="rov/depth_sensor_link"/>
+        <param name="use_kalman_filter" value="true"/>
+        <param name="publish_odom" value="true"/>
+        <param name="publish_pose" value="false"/>
     </node>
 
  <!-- launch all the sensors -->
