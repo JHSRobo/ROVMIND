@@ -8,9 +8,7 @@
     <node pkg="vector_drive" type="vert_drive" name="vert_drive"/>
 
  <!-- harware interface -->
-   <node respawn="true" pkg="hardware_interface" type="hw_thruster_controller_interface.py" name="hw_thruster_controller_interface">
-      <param name="thrusterControllerPort" type="string" value="/dev/serial/by-id/usb-1a86_USB2.0-Serial-if00-port0"/>
-   </node>
+   <node respawn="true" pkg="hardware_interface" type="hardware_interface_node" name="hw_interface_node"/>
 
  <!-- start reading sensor data from DRQ1250s -->
  <!-- respawn setup to restart the node every 30 seconds if it dies-->
