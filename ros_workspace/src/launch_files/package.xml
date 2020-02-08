@@ -63,7 +63,6 @@
   <exec_depend>rosserial_python</exec_depend>
   <exec_depend>rtabmap_ros</exec_depend>
   <exec_depend>robot_localization</exec_depend>
-  <exec_depend>raspicam_node</exec_depend>
   <exec_depend>video_stream_opencv</exec_depend>
   <exec_depend>robot_localization</exec_depend>
   <exec_depend>ddynamic_reconfigure</exec_depend>
