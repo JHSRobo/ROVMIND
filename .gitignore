@@ -123,30 +123,32 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 # Custom Versioning Folders
-/ros_workspace/src/bmp280/
-/ros_workspace/src/bno055/
-/ros_workspace/src/copilot_page/
-/ros_workspace/src/copilot_interface/
-/ros_workspace/src/doc/
-/ros_workspace/src/hardware_interface/
-/ros_workspace/src/keyboard-teleop/
-/ros_workspace/src/ms5837/
-/ros_workspace/src/raspicam_node/
-/ros_workspace/src/realsense2_description/
-/ros_workspace/src/rov_control/
-/ros_workspace/src/rov_control_interface/
-/ros_workspace/src/rov_descriprion/
-/ros_workspace/src/sen10972/
-/ros_workspace/src/sensor_readout/
-/ros_workspace/src/sht31/
-/ros_workspace/src/tcu_touchscreen/
-/ros_workspace/src/tcu_board_msgs/
-/ros_workspace/src/vector_drive/
-/ros_workspace/src/uuv_simulator/
-/ros_workspace/src/depth_hold/
-/ros_workspace/src/realsense-ros/
-/ros_workspace/src/rov_localization/
-/ros_workspace/src/rov_description/
-/ros_workspace/src/motion_pids/
+ros_workspace/src/bmp280/
+ros_workspace/src/bno055/
+ros_workspace/src/copilot_page/
+ros_workspace/src/copilot_interface/
+ros_workspace/src/doc/
+ros_workspace/src/hardware_interface/
+ros_workspace/src/keyboard-teleop/
+ros_workspace/src/ms5837/
+ros_workspace/src/raspicam_node/
+ros_workspace/src/realsense2_description/
+ros_workspace/src/rov_control/
+ros_workspace/src/rov_control_interface/
+ros_workspace/src/rov_descriprion/
+ros_workspace/src/sen10972/
+ros_workspace/src/sensor_readout/
+ros_workspace/src/sht31/
+ros_workspace/src/tcu_touchscreen/
+ros_workspace/src/tcu_board_msgs/
+ros_workspace/src/vector_drive/
+ros_workspace/src/uuv_simulator/
+ros_workspace/src/depth_hold/
+ros_workspace/src/realsense-ros/
+ros_workspace/src/rov_localization/
+ros_workspace/src/rov_description/
+ros_workspace/src/motion_pids/
+ros_workspace/src/electromag/
+ros_workspace/src/camera_viewer/
 
 
