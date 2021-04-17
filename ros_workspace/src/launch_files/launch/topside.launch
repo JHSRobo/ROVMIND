@@ -1,29 +1,36 @@
 <launch>
-<!-- ROV topside control interface -->
-   <include file="$(find rov_control_interface)/launch/control_interface.launch"/>
+    <!-- ROV topside control interface -->
+    <include file="$(find rov_control_interface)/launch/control_interface.launch"/>
 
- <!-- temp copilot interface -->
+    <!-- temp copilot interface -->
    <!-- node pkg="rqt_reconfigure" type="rqt_reconfigure" name="copilot_interface"/-->
 
- <!-- temp pilot interface -->
+    <!-- temp pilot interface -->
     <!-- <node pkg="rqt_image_view" type="rqt_image_view" name="pilot_interface"/> -->
 
- <!-- tcu board -->
+    <!-- tcu board -->
     <node pkg="rosserial_python" type="serial_node.py" name="tcu_board">
         <param name="port" value="/dev/ttyACM0"/>
-     </node>
-
- <!-- Shape Detection -->
-    <!-- <node pkg="shape_detection" type="shape_detect.py" name="shape_detect"></node> -->
+    </node>
    
- <!-- ROS WebBridge -->
-     <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
+    <!-- ROS WebBridge -->
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
      
- <!-- camera_viewer -->
-     <node pkg="camera_viewer" type="switcher.py" name="camera_viewer"/>
+    <!-- camera_viewer -->
+    <node pkg="camera_viewer" type="switcher.py" name="camera_viewer"/>
   
-  <!-- depth hold -->
-      <include file="$(find depth_hold)/launch/depth_hold.launch"/>
+    <!-- motion pids -->
+    <include file="$(find motion_pids)/launch/motion_pids.launch"/>
+
+    <!-- Run realsense T265 on topside -->
+    <include file="$(find rov_localization)/launch/rov_realsense.launch"/>
+
+    <!-- Run localization EKF -->
+    <include file="$(find rov_localization)/launch/rov_localization.launch">
+        <arg name="display" value="true"/>
+    </include>
+
+
 
 </launch>
 

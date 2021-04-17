@@ -23,6 +23,8 @@ FOLLOW:
 
 ### Launching/Running
 
+Install ROS dependenceis: `rosdep install --from-paths src --ignore-src -r -y`
+
 Follow Test Bench Setup Steps if Running on Test Bench
 * https://docs.google.com/document/d/1srYgNUE4k3DVHkUv1TwUJawfUWw6kGkveDhAvulWMZ0/edit#heading=h.wyzbdb7zgifi
 
@@ -32,9 +34,6 @@ Locally:
 ### Prerequisites
 
 What things you should to install to develop and run software and how to install them
-
-Code Blocks IDE on rpi ubuntu mate
-* `sudo apt-get install codeblocks`
 
 On the RPI turn on the CSI, SPI, I2C, and UART interfaces using `sudo raspi-config`
 
@@ -111,8 +110,13 @@ On your Raspberry Pi 3B make sure you are running ubuntu mate 16.04 (image here 
 
 * When building bottomside with catkin_make, type the command catkin_make -DCATKIN_WHITELIST_PACKAGES="vector_drive;hardware_interface;raspicam_node;drq1250;ms5837;sensor_readout"
 
-### Intel Realsense Setup instructions
-## Ubuntu
+## Intel Realsense Setup instructions
+### Ubuntu for T265
+
+* Follow the driver installation instructions: https://github.com/intel-ros/realsense
+* Test using `roslaunch realsense2_camera demo_t265.launch`
+
+### Ubuntu for D435 - OLD
 
 * Follow the driver installation instructions: https://github.com/intel-ros/realsense
 * Test using `roslaunch realsense2_camera rs_camera.launch`
