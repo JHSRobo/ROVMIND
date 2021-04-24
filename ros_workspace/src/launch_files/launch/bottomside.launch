@@ -9,6 +9,9 @@
 
  <!-- harware interface -->
    <node respawn="true" pkg="hardware_interface" type="hardware_interface_node" name="hw_interface_node"/>
+ 
+ <!-- gpio_control -->
+ <node pkg="gpio_control" type="gpio_control.py" name="gpio_control"/>
 
  <!-- start reading sensor data from DRQ1250s -->
  <!-- respawn setup to restart the node every 30 seconds if it dies-->
