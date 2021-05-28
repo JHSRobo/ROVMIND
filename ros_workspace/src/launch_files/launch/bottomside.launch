@@ -1,5 +1,8 @@
 <launch>
  <!-- <node name="foo" pkg="camera_streamer" type="startup.sh" /> -->
+ 
+ <!-- depth sensor -->
+   <node pkg="depth_sensor" type="depth_sensor.py" name="depth_sensor"/>
 
  <!-- horizontal vector drive node -->
    <node pkg="vector_drive" type="horiz_drive" name="horiz_drive"/>
