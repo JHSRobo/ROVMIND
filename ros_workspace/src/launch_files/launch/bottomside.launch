@@ -1,6 +1,9 @@
 <launch>
  <!-- <node name="foo" pkg="camera_streamer" type="startup.sh" /> -->
  
+ <!-- micro rov -->
+   <node pkg="micro_rov" type="micro_rov.py" name="micro_rov"/>
+ 
  <!-- depth sensor -->
    <node pkg="depth_sensor" type="depth_sensor.py" name="depth_sensor"/>
 
