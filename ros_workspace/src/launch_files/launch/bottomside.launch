@@ -1,6 +1,6 @@
 <launch>
  <!-- streamer -->
-   <node name="foo" pkg="streamer" type="startup.sh" />
+   <node name="foo" pkg="ros_streamer" type="startup.sh" />
  
  <!-- micro rov -->
    <node pkg="micro_rov" type="pwm.py" name="micro_rov"/>
