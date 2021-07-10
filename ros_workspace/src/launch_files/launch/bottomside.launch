@@ -3,7 +3,7 @@
    <node pkg="micro_rov" type="pwm.py" name="micro_rov"/>
  
  <!-- depth sensor -->
-   <node pkg="depth_sensor" type="depth_sensor.py" name="depth_sensor"/>
+   <node respawn="true" pkg="depth_sensor" type="depth_sensor.py" name="depth_sensor"/>
 
  <!-- horizontal vector drive node -->
    <node pkg="vector_drive" type="horiz_drive" name="horiz_drive"/>
