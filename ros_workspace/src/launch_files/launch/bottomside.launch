@@ -1,5 +1,13 @@
 <launch>
- <!-- <node name="foo" pkg="camera_streamer" type="startup.sh" /> -->
+ <!-- drq diagnostic -->
+   <node pkg="drq_ros" type="drq1250_ros.py" name="drq_ros1" args="0x08"/>
+   <node pkg="drq_ros" type="drq1250_ros.py" name="drq_ros2" args="0x0a"/>
+ 
+ <!-- micro rov -->
+   <node pkg="micro_rov" type="pwm.py" name="micro_rov"/>
+ 
+ <!-- depth sensor -->
+   <node respawn="true" pkg="depth_sensor" type="depth_sensor.py" name="depth_sensor"/>
 
  <!-- horizontal vector drive node -->
    <node pkg="vector_drive" type="horiz_drive" name="horiz_drive"/>
