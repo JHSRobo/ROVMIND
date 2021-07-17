@@ -17,7 +17,6 @@
     <!-- <node pkg="camera_viewer" type="switcher.py" name="camera_viewer"/> -->
 
     <!-- keyboard_teleop -->
-    <node pkg="keyboard_teleop" type="keyboard_teleop.py" name="keyboard_teleop"/>
-
+    <node pkg="keyboard_teleop" type="keyboard.py" name="keyboard_teleop"/>
 </launch>
 
