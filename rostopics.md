@@ -1,4 +1,3 @@
-# 
 # ROS Topic List and Information
 
 This document provides information on each current ROS Topic, with the purpose and message type. More information can be found on each topic inside their respective package.
