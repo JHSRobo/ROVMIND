@@ -8,7 +8,10 @@
  
  <!-- depth sensor -->
    <node respawn="true" pkg="depth_sensor" type="depth_sensor.py" name="depth_sensor"/>
-
+ 
+ <!-- gpio readout -->
+   <node pkg="gpio_control" type="gpio_reader.py" name="gpio_readout"/>
+ 
  <!-- horizontal vector drive node -->
    <node pkg="vector_drive" type="horiz_drive" name="horiz_drive"/>
 
