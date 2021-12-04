@@ -12,6 +12,9 @@
  <!-- gpio control -->
    <node pkg="gpio_control" type="gpio_control.py" name="gpio_control"/>
  
+ <!-- gpio status srv -->
+   <node pkg="gpio_control" type="gpio_status_server.py" name="gpio_status"/>
+ 
  <!-- horizontal vector drive node -->
    <node pkg="vector_drive" type="horiz_drive" name="horiz_drive"/>
 
@@ -20,32 +23,5 @@
 
  <!-- harware interface -->
    <node respawn="true" pkg="hardware_interface" type="hardware_interface_node" name="hw_interface_node"/>
- 
- <!-- gpio_control -->
- <node pkg="gpio_control" type="gpio_control.py" name="gpio_control"/>
-
- <!-- start reading sensor data from DRQ1250s -->
- <!-- respawn setup to restart the node every 30 seconds if it dies-->
- <!-- <node pkg="drq1250" type="drq1250_ros.py" name="drq1250" args="0x08" respawn="true" respawn_delay="30" ns="rov/drq1250_1"/>-->
- <!-- <node pkg="drq1250" type="drq1250_ros.py" name="drq1250" args="0x0A" respawn="true" respawn_delay="30" ns="rov/drq1250_2"/>-->
-
- <!-- start reading the depth sensor -->
- <!-- respawn setup to restart the node every 30 seconds if it dies-->
-    <!-- node pkg="ms5837" name="depth_sensor" type="ms5837_ros.py" respawn="true">
-        <param name="fluid_density" value="1000"/>
-        <param name="depth_variance" value="0.1"/>
-        <param name="tf_frame" value="rov/depth_sensor_link"/>
-        <param name="use_kalman_filter" value="true"/>
-        <param name="publish_odom" value="true"/>
-        <param name="publish_pose" value="false"/>
-    </node -->
-
- <!-- launch all the sensors -->
- <!-- respawn setup to restart the node every 30 seconds if it dies-->
- <!-- <node type="sensor-hat.py" pkg="sensor_readout" name="sensor_interface" respawn="true" respawn_delay="30"/> -->
-
- <!-- <node type="bno055_ros.py" pkg="bno055" name="imu" respawn="true" respawn_delay="30"/> -->
- <!-- node type="bmp280_ros.py" pkg="bmp280" name="bmp280" respawn_delay="30"/ -->
- <!-- <node type="sht31_ros.py" pkg="sht31" name="sht31"/> -->
 
 </launch>
