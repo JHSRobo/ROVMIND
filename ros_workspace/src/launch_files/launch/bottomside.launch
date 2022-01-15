@@ -7,7 +7,7 @@
    <node pkg="micro_rov" type="pwm.py" name="micro_rov"/>
  
  <!-- depth sensor -->
-   <node respawn="true" pkg="depth_sensor" type="depth_sensor.py" name="depth_sensor"/>
+   <node pkg="depth_sensor" type="depth_sensor.py" name="depth_sensor"/>
  
  <!-- gpio control -->
    <node pkg="gpio_control" type="gpio_control.py" name="gpio_control"/>
