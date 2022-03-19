@@ -9,6 +9,9 @@
  <!-- depth sensor -->
    <node pkg="depth_sensor" type="depth_sensor.py" name="depth_sensor"/>
  
+ <!-- temp sensor -->
+   <node pkg="pi_temp" type="temperature_sensor.py" name="pi_temp"/>
+ 
  <!-- gpio control -->
    <node pkg="gpio_control" type="gpio_control.py" name="gpio_control"/>
  
