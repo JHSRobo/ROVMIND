@@ -19,6 +19,9 @@
     <!-- depth_hold -->
     <node pkg="depth_hold" type="depth_hold.py" name="depth_hold"/>
 
+    <!-- thruster_tester -->
+    <node pkg="thruster_tester" type="thruster_tester.py" name="thruster_tester"/>
+    
     <!-- keyboard_teleop -->
     <node pkg="keyboard_teleop" type="keyboard.py" name="keyboard_teleop"/>
 </launch>
