@@ -3,7 +3,7 @@
     <include file="$(find rov_control_interface)/launch/control_interface.launch"/>
 
     <!-- ROV topside ops interface -->
-    <node pkg="copilot_interface" type="ops_interace.py" name="ops_interface"/>
+    <node pkg="copilot_interface" type="ops_interface.py" name="ops_interface"/>
     
     <!-- temp copilot interface -->
     <node pkg="rqt_reconfigure" type="rqt_reconfigure" name="copilot_interface"/>
