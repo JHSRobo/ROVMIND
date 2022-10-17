@@ -53,7 +53,6 @@
   <!--Packages that are needed to run full system launch files -->
   <exec_depend>copilot_interface</exec_depend>
   <exec_depend>hardware_interface</exec_depend>
-  <exec_depend>raspicam_node</exec_depend>
   <exec_depend>rov_control_interface</exec_depend>
   <exec_depend>usb_cam</exec_depend>
   <exec_depend>vector_drive</exec_depend>
