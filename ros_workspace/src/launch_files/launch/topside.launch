@@ -8,9 +8,6 @@
     <!-- temp copilot interface -->
     <node pkg="rqt_reconfigure" type="rqt_reconfigure" name="copilot_interface"/>
 
-    <!-- temp pilot interface -->
-    <!-- <node pkg="rqt_image_view" type="rqt_image_view" name="pilot_interface"/> -->
-
     <!-- tcu board -->
     <node pkg="rosserial_python" type="serial_node.py" name="tcu_board">
         <param name="port" value="/dev/ttyACM0"/>
@@ -19,12 +16,6 @@
     <!-- camera_viewer -->
     <node pkg="camera_viewer" type="switcher.py" name="camera_viewer"/>
     
-    <!-- depth_hold -->
-    <!--<node pkg="depth_hold" type="depth_hold.py" name="depth_hold"/> -->
-
-    <!-- thruster_tester -->
-    <!-- <node pkg="thruster_tester" type="thruster_tester.py" name="thruster_tester"/> -->
-      
     <!-- keyboard_teleop -->
     <node pkg="keyboard_teleop" type="keyboard.py" name="keyboard_teleop"/>
 </launch>
