@@ -6,7 +6,7 @@
     <!-- <node pkg="copilot_interface" type="ops_interface.py" name="ops_interface"/> --> 
     
     <!-- ROV topside autonomous drive -->
-    <node pkg="copilot_interface" type="autonomous.py" name="autonomous"/>
+    <node pkg="rov_control_interface" type="autonomous.py" name="autonomous"/>
     
     <!-- temp copilot interface -->
     <node pkg="rqt_reconfigure" type="rqt_reconfigure" name="copilot_interface"/>
