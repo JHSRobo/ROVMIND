@@ -3,28 +3,12 @@
    <node pkg="drq_ros" type="drq1250_ros.py" name="drq_ros1" args="0x08"/>
    <node pkg="drq_ros" type="drq1250_ros.py" name="drq_ros2" args="0x0a"/>
  
- <!-- micro rov -->
-   <node pkg="micro_rov" type="pwm.py" name="micro_rov"/>
- 
  <!-- depth sensor -->
    <node pkg="depth_sensor" type="depth_sensor.py" name="depth_sensor"/>
- 
- <!-- temp sensor -->
-   <node pkg="pi_temp" type="temperature_sensor.py" name="pi_temp"/>
  
  <!-- gpio control -->
    <node pkg="gpio_control" type="gpio_control.py" name="gpio_control"/>
  
- <!-- gpio status srv -->
-   <node pkg="gpio_control" type="gpio_status_server.py" name="gpio_status"/>
- 
- <!-- horizontal vector drive node -->
-   <node pkg="vector_drive" type="horiz_drive" name="horiz_drive"/>
-
- <!-- vertical vector drive node -->
-    <node pkg="vector_drive" type="vert_drive" name="vert_drive"/>
-
- <!-- harware interface -->
-   <node respawn="true" pkg="hardware_interface" type="hardware_interface_node" name="hw_interface_node"/>
-
+ <!-- thruster interface -->
+   <node pkg="thrusters" type="thrusterInterface.py" name="thruster_interface"/>
 </launch>
