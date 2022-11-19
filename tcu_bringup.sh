@@ -19,11 +19,10 @@ touch /etc/udev/rules.d/joystick.rules
 echo "“KERNAL==“HyACMO” MODE==“06666””" >> /etc/udev/rules.d/joystick.rules
 echo "192.168.1.100 master" >> /etc/hosts
 echo "192.168.1.111 bottomside" >> /etc/hosts
-echo "deb [trusted=yes] http://packages.ros.org/ros/ubuntu focal InRelease" >> /etc/apt/sources.list
 source ~/.bashrc
 
 #Install required packages
-apt update && apt upgrade
+apt update && apt upgrade --allow-unauthenticated
 apt install curl -y
 apt install python3-pip -y
 apt install net-tools -y
