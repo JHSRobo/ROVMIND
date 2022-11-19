@@ -1,8 +1,6 @@
 #!/bin/bash
-#Edit files syntax:
-#echo "alias cameras=\"rosrun camera_viewer switcher.py\"" >> ~/.bashrc
 
-#Check sudo perms
+# Check sudo perms
 if [[ "$(id -u)" != 0 ]]
   then echo "Please run as root"
   exit
@@ -21,14 +19,16 @@ echo "192.168.1.100 master" >> /etc/hosts
 echo "192.168.1.111 bottomside" >> /etc/hosts
 source ~/.bashrc
 
-#Install required packages
-apt update && apt upgrade --allow-unauthenticated
+# Install required packages
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
+  # Above command adds key for ROS update
+apt update && apt upgrade --allow-unauthenticated -y
 apt install curl -y
-apt install python3-pip -y
+apt install python3-pip
 apt install net-tools -y
 python3 -m pip install smbus -y
 
-#Installing ROS
+# Installing ROS
 sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 apt update
 apt install ros-noetic-desktop
@@ -37,5 +37,5 @@ apt install python3-rosdep python3-rosinstall python3-rosinstall-generator pytho
 rosdep init
 sudo -u jhsrobo rosdep update
 
-#Clone our software from Github
+# Clone our software from Github
 sudo -u jhsrobo bash tcu_repo_clone.sh
