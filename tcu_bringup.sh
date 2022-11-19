@@ -8,12 +8,6 @@ if [[ "$(id -u)" != 0 ]]
   exit
 fi
 
-apt update && apt upgrade
-apt install curl -y
-apt install python3-pip -y
-apt install net-tools -y
-python3 -m pip install smbus -y
-
 # Edit Ubuntu Files
 echo "alias topside=\"cd /home/jhsrobo/ROVMIND/ros_workspace && rosrun launch_files bottomside.launch\"" >> ~/.bashrc
 echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
@@ -25,7 +19,15 @@ touch /etc/udev/rules.d/joystick.rules
 echo "“KERNAL==“HyACMO” MODE==“06666””" >> /etc/udev/rules.d/joystick.rules
 echo "192.168.1.100 master" >> /etc/hosts
 echo "192.168.1.111 bottomside" >> /etc/hosts
+echo "deb [trusted=yes] http://packages.ros.org/ros/ubuntu focal InRelease" >> /etc/apt/sources.list
 source ~/.bashrc
+
+#Install required packages
+apt update && apt upgrade
+apt install curl -y
+apt install python3-pip -y
+apt install net-tools -y
+python3 -m pip install smbus -y
 
 #Installing ROS
 sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
