@@ -1,3 +1,0 @@
- - builder: doxygen
-   name: package_name
-   output_dir: package_name

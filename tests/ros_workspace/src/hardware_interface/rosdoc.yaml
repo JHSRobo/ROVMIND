@@ -1,3 +1,0 @@
- - builder: doxygen
-   name: hardware_interface
-   output_dir: hardware_interface
