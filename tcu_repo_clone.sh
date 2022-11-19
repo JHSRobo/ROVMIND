@@ -6,7 +6,7 @@ if [[ "$(id -u)" == 0 ]]
   exit
 fi
 
-cd ~/ROVMIND/ros_workspace/src/
+cd /home/jhsrobo/ROVMIND/ros_workspace/src/
 
 source /opt/ros/noetic/setup.bash
 
@@ -19,7 +19,7 @@ git clone https://github.com/JHSRobo/copilot_interface.git
 git clone https://github.com/JHSRobo/rov_control_interface.git -b development
 git clone https://github.com/JHSRobo/launch_files.git
 
-cd ~/ROVMIND/ros_workspace
+cd /home/jhsrobo/ROVMIND/ros_workspace
 
 # Update dependencies
 rosdep install --from-paths src --ignore-src -r -y

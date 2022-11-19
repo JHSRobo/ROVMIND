@@ -7,13 +7,13 @@ if [[ "$(id -u)" != 0 ]]
 fi
 
 # Edit Ubuntu Files
-rm -rf ~/.bashrc
-mv ~/ROVMIND/bashrc ~/.bashrc
+rm -rf /home/jhsrobo/.bashrc
+mv /home/jhsrobo/ROVMIND/bashrc /home/jhsrobo/.bashrc
 touch /etc/udev/rules.d/joystick.rules
 echo "“KERNAL==“HyACMO” MODE==“06666””" >> /etc/udev/rules.d/joystick.rules
 echo "192.168.1.100 master" >> /etc/hosts
 echo "192.168.1.111 bottomside" >> /etc/hosts
-source ~/.bashrc
+source /home/jhsrobo/.bashrc
 
 # Install required packages
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
