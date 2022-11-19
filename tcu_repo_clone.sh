@@ -8,6 +8,8 @@ fi
 
 cd ~/ROVMIND/ros_workspace/src/
 
+source /opt/ros/noetic/setup.bash
+
 # Remove old repos
 rm -rf RPICamera copilot_interface rov_control_interface launch_files
 
