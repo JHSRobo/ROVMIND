@@ -13,6 +13,9 @@ echo "source /home/jhsrobo/ROVMIND/ros_workspace/devel/setup.bash"
 echo "export ROS_MASTER_URI=http://master:11311" >> ~/.bashrc
 echo "export ROS_HOSTNAME=master" >> ~/.bashrc
 echo "export ROS_IP=192.168.1.100" >> ~/.bashrc
+echo "export ROS_DISTRO=noetic" >> ~/.bashrc
+echo "alias topside=\"roslaunch launch_files topside.launch\"" >> ~/.bashrc
+echo "alias Topside=\"roslaunch launch_files topside.launch\"" >> ~/.bashrc
 touch /etc/udev/rules.d/joystick.rules
 echo "“KERNAL==“HyACMO” MODE==“06666””" >> /etc/udev/rules.d/joystick.rules
 echo "192.168.1.100 master" >> /etc/hosts
@@ -22,18 +25,17 @@ source ~/.bashrc
 # Install required packages
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
   # Above command adds key for ROS update
-apt update && apt upgrade --allow-unauthenticated -y
 apt install curl -y
-apt install python3-pip
+apt install python3-pip -y
 apt install net-tools -y
 python3 -m pip install smbus -y
+apt update && apt upgrade --allow-unauthenticated -y
 
 # Installing ROS
 sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-apt update
-apt install ros-noetic-desktop
+apt install ros-noetic-desktop -y
 source /opt/ros/noetic/setup.bash
-apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential -y
 rosdep init
 sudo -u jhsrobo rosdep update
 
