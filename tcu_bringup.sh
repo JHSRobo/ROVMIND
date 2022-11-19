@@ -29,6 +29,7 @@ apt install curl -y
 apt install python3-pip -y
 apt install net-tools -y
 python3 -m pip install smbus -y
+apt --fix-broken-install
 apt update && apt upgrade --allow-unauthenticated -y
 
 # Installing ROS
