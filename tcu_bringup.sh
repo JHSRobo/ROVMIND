@@ -8,7 +8,7 @@ fi
 
 # Edit Ubuntu Files
 rm -rf /home/jhsrobo/.bashrc
-mv /home/jhsrobo/ROVMIND/bashrc /home/jhsrobo/.bashrc
+mv /home/jhsrobo/Github/ROVMIND/bashrc /home/jhsrobo/.bashrc
 touch /etc/udev/rules.d/joystick.rules
 echo "“KERNAL==“HyACMO” MODE==“06666””" >> /etc/udev/rules.d/joystick.rules
 echo "192.168.1.100 master" >> /etc/hosts
