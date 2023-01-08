@@ -6,7 +6,7 @@ if [[ "$(id -u)" == 0 ]]
   exit
 fi
 
-cd /home/jhsrobo/Github/ROVMIND/ros_workspace/src/
+cd /home/jhsrobo/ROVMIND/ros_workspace/src/
 
 source /opt/ros/noetic/setup.bash
 
@@ -24,6 +24,6 @@ cd /home/jhsrobo/ROVMIND/ros_workspace
 # Update dependencies
 rosdep install --from-paths src --ignore-src -r -y
 
-source /home/jhsrobo/Github/ROVMIND/ros_workspace/devel/setup.bash
+source /home/jhsrobo/ROVMIND/ros_workspace/devel/setup.bash
 
 catkin_make
