@@ -12,7 +12,7 @@ ssh-keygen -t rsa -b 4096 -f /etc/ssh/ssh_host_rsa_key
 
 # Edit Ubuntu Files
 rm -rf /home/jhsrobo/.bashrc
-mv /home/jhsrobo/Github/ROVMIND/bashrc_bottom /home/jhsrobo/.bashrc
+mv /home/jhsrobo/ROVMIND/bashrc_bottom /home/jhsrobo/.bashrc
 echo "192.168.1.100 master" >> /etc/hosts
 echo "192.168.1.111 bottomside" >> /etc/hosts
 touch /etc/udev/rules.d/60-extra-acl.rules
