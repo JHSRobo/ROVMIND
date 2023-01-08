@@ -17,7 +17,7 @@ rm -rf thrusters depth_sensor gpio_control launch_files
 git clone https://github.com/JHSRobo/thrusters.git
 git clone https://github.com/JHSRobo/depth_sensor.git
 git clone https://github.com/JHSRobo/gpio_control.git
-git clone https://github.com/JHSRobo/launch_files.git -b ROVMIND-Rev-2
+git clone https://github.com/JHSRobo/launch_files.git
 
 cd /home/jhsrobo/ROVMIND/ros_workspace
 
