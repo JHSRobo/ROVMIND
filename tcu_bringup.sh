@@ -25,14 +25,14 @@ python3 -m pip install smbus -y
 python3 -m pip install flask -y
 
 # Installing ROS
-sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
-apt update && apt upgrade --allow-unauthenticated -y
-apt --fix-broken-install -y
-apt install ros-noetic-desktop -y
-source /opt/ros/noetic/setup.bash
-apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential -y
-rosdep init
+sudo -u jhsrobo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo -u jhsrobo curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+sudo -u jhsrobo apt update && apt upgrade --allow-unauthenticated -y
+sudo -u jhsrobo apt --fix-broken-install -y
+sudo -u jhsrobo apt install ros-noetic-desktop -y
+sudo -u jhsrobo source /opt/ros/noetic/setup.bash
+sudo -u jhsrobo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential -y
+sudo -u jhsrobo rosdep init
 sudo -u jhsrobo rosdep update
 
 # Clone our software from Github
