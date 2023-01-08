@@ -30,7 +30,6 @@ curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo ap
 apt update && apt upgrade --allow-unauthenticated -y
 apt --fix-broken-install -y
 apt install ros-noetic-desktop -y
-apt install ros-noetic-joy -y
 source /opt/ros/noetic/setup.bash
 apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential -y
 rosdep init

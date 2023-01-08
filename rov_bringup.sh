@@ -25,26 +25,18 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
 apt install curl -y
 apt install python3-pip -y
 apt install net-tools -y
-python3 -m pip install smbus -y
+python3 -m pip install smbus -y # Library published by a rovotics alum (Michael Equi)
 python3 -m pip install flask -y
 
 # Installing ROS
 sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 apt update && apt upgrade --allow-unauthenticated -y
-apt --fix-broken-install -y
 apt install ros-noetic-desktop -y
 source /opt/ros/noetic/setup.bash
 apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential -y
 rosdep init smbus
 sudo -u jhsrobo rosdep update
-
-# Create Swap File
-swapoff -a
-dd if=/dev/zero of=/swapfile bs=1M count=8000 status=progress
-chmod 600 /swapfile
-mkswap /swapfile
-swapon /swapfile
 
 # enable I2C
 echo '>>> Enable I2C'
