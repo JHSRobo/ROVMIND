@@ -152,3 +152,5 @@ ros_workspace/src/electromag/
 ros_workspace/src/camera_viewer/
 
 
+ros_workspace/src/launch_files/
+ros_workspace/src/cameras/
