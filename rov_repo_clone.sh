@@ -8,7 +8,7 @@ fi
 
 cd /home/jhsrobo/ROVMIND/ros_workspace/src/
 
-source /opt/ros/noetic/setup.bash
+. /opt/ros/noetic/setup.bash
 
 # Remove old repos
 rm -rf thrusters depth_sensor gpio_control launch_files
@@ -24,6 +24,6 @@ cd /home/jhsrobo/ROVMIND/ros_workspace
 # Update dependencies
 rosdep install --from-paths src --ignore-src -r -y
 
-source /home/jhsrobo/ROVMIND/ros_workspace/devel/setup.bash
+. /home/jhsrobo/ROVMIND/ros_workspace/devel/setup.bash
 
 catkin_make
