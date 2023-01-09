@@ -21,9 +21,7 @@ echo 'KERNEL=="ttyUSB[0-9]*", TAG+="udev-acl", TAG+="uaccess"'
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
   # Above command adds key for ROS update
 apt install curl python3-pip net-tools -y
-python3 -m pip install smbus -y # Library published by a rovotics alum (Michael Equi)
-python3 -m pip install flask -y
-python3 -m pip install adafruit-circuitpython-servokit -y
+python3 -m pip install adafruit-circuitpython-servokit
 
 # Installing ROS
 sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
