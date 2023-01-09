@@ -17,7 +17,7 @@ echo "192.168.1.100 master" >> /etc/hosts
 echo "192.168.1.111 bottomside" >> /etc/hosts
 touch /etc/udev/rules.d/60-extra-acl.rules
 echo 'KERNEL=="ttyUSB[0-9]*", TAG+="udev-acl", TAG+="uaccess"'
-source /home/jhsrobo/.bashrc
+. /home/jhsrobo/.bashrc
 
 # Install required packages
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
@@ -33,7 +33,7 @@ sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /
 curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 apt update && apt upgrade --allow-unauthenticated -y
 apt install ros-noetic-desktop -y
-source /opt/ros/noetic/setup.bash
+. /opt/ros/noetic/setup.bash
 apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential -y
 rosdep init smbus
 sudo -u jhsrobo rosdep update
