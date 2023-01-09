@@ -11,7 +11,7 @@ apt update && apt upgrade -y
 # Edit Ubuntu Files
 rm -rf /home/jhsrobo/.bashrc
 mv /home/jhsrobo/ROVMIND/bashrc_bottom /home/jhsrobo/.bashrc
-echo "192.168.1.100 master" >> /etc/hosts
+echo "192.168.1.100 topside" >> /etc/hosts
 echo "192.168.1.111 bottomside" >> /etc/hosts
 touch /etc/udev/rules.d/60-extra-acl.rules
 echo 'KERNEL=="ttyUSB[0-9]*", TAG+="udev-acl", TAG+="uaccess"'
