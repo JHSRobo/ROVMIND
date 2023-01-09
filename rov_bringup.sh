@@ -7,8 +7,6 @@ if [[ "$(id -u)" != 0 ]]
 fi
 
 apt update && apt upgrade -y
-ufw allow 22
-ssh-keygen -t rsa -b 4096 -f /etc/ssh/ssh_host_rsa_key
 
 # Edit Ubuntu Files
 rm -rf /home/jhsrobo/.bashrc
@@ -22,9 +20,10 @@ echo 'KERNEL=="ttyUSB[0-9]*", TAG+="udev-acl", TAG+="uaccess"'
 # Install required packages
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
   # Above command adds key for ROS update
-apt install curl python3-pip net-tools adafruit-servokit -y
+apt install curl python3-pip net-tools -y
 python3 -m pip install smbus -y # Library published by a rovotics alum (Michael Equi)
 python3 -m pip install flask -y
+python3 -m pip install adafruit-circuitpython-servokit -y
 
 # Installing ROS
 sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
