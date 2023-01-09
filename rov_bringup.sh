@@ -31,45 +31,9 @@ curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo ap
 apt update && apt upgrade --allow-unauthenticated -y
 apt install ros-noetic-desktop -y
 . /opt/ros/noetic/setup.bash
-apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential -y
+apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential i2c-tools -y
 rosdep init smbus
 su - jhsrobo -c "rosdep update"
-
-# enable I2C
-echo '>>> Enable I2C'
-if grep -q 'i2c-bcm2708' /etc/modules; then
-  echo 'Seems i2c-bcm2708 module already exists, skip this step.'
-else
-  echo 'i2c-bcm2708' >> /etc/modules
-fi
-if grep -q 'i2c-dev' /etc/modules; then
-  echo 'Seems i2c-dev module already exists, skip this step.'
-else
-  echo 'i2c-dev' >> /etc/modules
-fi
-if grep -q 'dtparam=i2c1=on' /boot/config.txt; then
-  echo 'Seems i2c1 parameter already set, skip this step.'
-else
-  echo 'dtparam=i2c1=on' >> /boot/config.txt
-fi
-if grep -q 'dtparam=i2c_arm=on' /boot/config.txt; then
-  echo 'Seems i2c_arm parameter already set, skip this step.'
-else
-  echo 'dtparam=i2c_arm=on' >> /boot/config.txt
-fi
-if [ -f /etc/modprobe.d/raspi-blacklist.conf ]; then
-  sed -i 's/^blacklist spi-bcm2708/#blacklist spi-bcm2708/' /etc/modprobe.d/raspi-blacklist.conf
-  sed -i 's/^blacklist i2c-bcm2708/#blacklist i2c-bcm2708/' /etc/modprobe.d/raspi-blacklist.conf
-else
-  echo 'File raspi-blacklist.conf does not exist, skip this step.'
-fi
-# install i2c-tools
-echo '>>> Install i2c-tools'
-if hash i2cget 2>/dev/null; then
-  echo 'Seems i2c-tools is installed already, skip this step.'
-else
-  apt-get install -y i2c-tools
-fi
 
 # Clone our software from Github
 su - jhsrobo -c "bash rov_repo_clone.sh"
