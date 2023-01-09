@@ -122,5 +122,5 @@ export ROS_MASTER_URI=http://master:11311
 export ROS_HOSTNAME=bottomside
 export ROS_IP=192.168.1.111
 export ROS_DISTRO=noetic
-alias topside="roslaunch launch_files topside.launch"
-alias Topside="roslaunch launch_files topside.launch"
+alias bottomside="roslaunch launch_files bottomside.launch"
+alias Bottomside="roslaunch launch_files bottomside.launch"
