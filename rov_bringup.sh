@@ -22,9 +22,7 @@ echo 'KERNEL=="ttyUSB[0-9]*", TAG+="udev-acl", TAG+="uaccess"'
 # Install required packages
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
   # Above command adds key for ROS update
-apt install curl -y
-apt install python3-pip -y
-apt install net-tools -y
+apt install curl python3-pip net-tools adafruit-servokit -y
 python3 -m pip install smbus -y # Library published by a rovotics alum (Michael Equi)
 python3 -m pip install flask -y
 
