@@ -33,7 +33,7 @@ apt install ros-noetic-desktop -y
 . /opt/ros/noetic/setup.bash
 apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential -y
 rosdep init smbus
-sudo -u jhsrobo rosdep update
+su - jhsrobo -c "rosdep update"
 
 # enable I2C
 echo '>>> Enable I2C'
@@ -72,4 +72,4 @@ else
 fi
 
 # Clone our software from Github
-sudo -u jhsrobo bash rov_repo_clone.sh
+su - jhsrobo -c "bash rov_repo_clone.sh"
