@@ -21,8 +21,6 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
 apt install curl -y
 apt install python3-pip -y
 apt install net-tools -y
-python3 -m pip install smbus -y
-python3 -m pip install flask -y
 
 # Installing ROS
 sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
