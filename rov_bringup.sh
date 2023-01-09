@@ -72,4 +72,4 @@ else
 fi
 
 # Clone our software from Github
-sudo -u jhsrobo bash tcu_repo_clone.sh
+sudo -u jhsrobo bash rov_repo_clone.sh
