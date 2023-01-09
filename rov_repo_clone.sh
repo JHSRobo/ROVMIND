@@ -21,9 +21,8 @@ git clone https://github.com/JHSRobo/launch_files.git
 
 cd /home/jhsrobo/ROVMIND/ros_workspace
 
-# Update dependencies
-rosdep install --from-paths src --ignore-src -r -y
-
 . /home/jhsrobo/ROVMIND/ros_workspace/devel/setup.bash
 
 catkin_make
+
+echo "If you have new dependencies, then run: rosdep install --from-paths src --ignore-src -r -y"
