@@ -34,4 +34,4 @@ rosdep init smbus
 su - jhsrobo -c "rosdep update"
 
 # Clone our software from Github
-su - jhsrobo -c "bash rov_repo_clone.sh"
+su - jhsrobo -c "bash /home/jhsrobo/ROVMIND/rov_repo_clone.sh"
