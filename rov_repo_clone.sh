@@ -26,6 +26,4 @@ rosdep install --from-paths src --ignore-src -r -y
 
 . /home/jhsrobo/ROVMIND/ros_workspace/devel/setup.bash
 
-rosdep update
-
 catkin_make
