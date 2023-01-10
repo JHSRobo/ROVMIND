@@ -24,8 +24,7 @@ cd /home/jhsrobo/ROVMIND/ros_workspace
 . /home/jhsrobo/ROVMIND/ros_workspace/devel/setup.bash
 
 catkin_make
+rosdep install --from-paths src --ignore-src -r -y
 
 # Temporary fix below, find a better way to do this
 chmod +x /home/jhsrobo/ROVMIND/ros_workspace/src/thrusters/src/thrusterInterface.py
-
-echo "If you have new dependencies, then run: rosdep install --from-paths src --ignore-src -r -y"
