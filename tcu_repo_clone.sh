@@ -11,7 +11,7 @@ cd /home/jhsrobo/ROVMIND/ros_workspace/src/
 . /opt/ros/noetic/setup.bash
 
 # Remove old repos
-rm -rf RPICamera copilot_interface rov_control launch_files
+rm -rf cameras copilot_interface rov_control launch_files
 
 # Clone new repos
 git clone https://github.com/JHSRobo/cameras.git
