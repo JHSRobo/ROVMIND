@@ -10,6 +10,8 @@ apt update && apt upgrade -y
 
 # Edit Ubuntu Files
 rm -rf /home/jhsrobo/.bashrc
+rm -rf /home/jhsrobo/ROVMIND/tcu_repo_clone.sh
+rm -rf /home/jhsrobo/ROVMIND/tcu_bringup.sh
 mv /home/jhsrobo/ROVMIND/bashrc_bottom /home/jhsrobo/.bashrc
 echo "192.168.1.100 master" >> /etc/cloud/templates/hosts.debian.tmpl
 echo "192.168.1.111 bottomside" >> /etc/cloud/templates/hosts.debian.tmpl
