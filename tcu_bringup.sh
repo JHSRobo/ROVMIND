@@ -8,6 +8,8 @@ fi
 
 # Edit Ubuntu Files
 rm -rf /home/jhsrobo/.bashrc
+rm -rf /home/jhsrobo/ROVMIND/rov_repo_clone.sh
+rm -rf /home/jhsrobo/ROVMIND/rov_bringup.sh
 cp /home/jhsrobo/ROVMIND/bashrc_top /home/jhsrobo/.bashrc
 touch /etc/udev/rules.d/joystick.rules
 
