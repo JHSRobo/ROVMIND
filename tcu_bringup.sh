@@ -8,11 +8,19 @@ fi
 
 # Edit Ubuntu Files
 rm -rf /home/jhsrobo/.bashrc
-mv /home/jhsrobo/ROVMIND/bashrc_top /home/jhsrobo/.bashrc
+cp /home/jhsrobo/ROVMIND/bashrc_top /home/jhsrobo/.bashrc
 touch /etc/udev/rules.d/joystick.rules
-echo "“KERNAL==“HyACMO” MODE==“06666””" >> /etc/udev/rules.d/joystick.rules
-echo "192.168.1.100 master" >> /etc/hosts
-echo "192.168.1.111 bottomside" >> /etc/hosts
+
+if grep -Fxq "“KERNAL==“HyACMO” MODE==“06666””" /etc/udev/rules.d/joystick.rules
+  then echo "“KERNAL==“HyACMO” MODE==“06666””" >> /etc/udev/rules.d/joystick.rules
+fi
+if grep -Fxq "192.168.1.100 master" /etc/hosts
+  then echo "192.168.1.100 master" >> /etc/hosts
+fi
+if grep -Fxq "192.168.1.111 bottomside" /etc/hosts
+  then echo "192.168.1.111 bottomside" >> /etc/hosts
+fi
+
 . /home/jhsrobo/.bashrc
 
 # Install required packages
@@ -25,7 +33,9 @@ apt install net-tools -y
 pip install simple-pid # This package will not work with rosdep for whatever reason
 
 # Installing ROS
-sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+if grep -Fxq 'deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main' /etc/apt/sources.list.d/ros-latest.list
+  sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+fi
 curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 apt update && apt upgrade --allow-unauthenticated -y
 apt --fix-broken-install -y
