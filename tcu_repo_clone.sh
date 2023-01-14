@@ -16,7 +16,7 @@ cd /home/jhsrobo/ROVMIND/ros_workspace/src/
 rm -rf cameras copilot_interface rov_control launch_files
 
 # Clone new repos
-git clone https://github.com/JHSRobo/cameras.git
+git clone https://github.com/JHSRobo/camera_view.git
 git clone https://github.com/JHSRobo/copilot_interface.git
 git clone https://github.com/JHSRobo/rov_control.git
 git clone https://github.com/JHSRobo/launch_files.git
