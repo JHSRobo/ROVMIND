@@ -13,13 +13,15 @@ rm -rf /home/jhsrobo/.bashrc
 rm -rf /home/jhsrobo/ROVMIND/tcu_repo_clone.sh
 rm -rf /home/jhsrobo/ROVMIND/tcu_bringup.sh
 cp /home/jhsrobo/ROVMIND/bashrc_bottom /home/jhsrobo/.bashrc
-
 if grep -Fxq "192.168.1.100 master" /etc/cloud/templates/hosts.debian.tmpl
   then echo "192.168.1.100 master" >> /etc/cloud/templates/hosts.debian.tmpl
 fi
 if grep -Fxq "192.168.1.111 bottomside" /etc/cloud/templates/hosts.debian.tmpl
   then echo "192.168.1.111 bottomside" >> /etc/cloud/templates/hosts.debian.tmpl
 fi
+
+# Enable i2c
+sudo raspi-config nonint do_i2c 0
 
 touch /etc/udev/rules.d/60-extra-acl.rules
 . /home/jhsrobo/.bashrc
