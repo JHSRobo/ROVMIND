@@ -122,5 +122,6 @@ export ROS_MASTER_URI=http://master:11311
 export ROS_HOSTNAME=master
 export ROS_IP=192.168.1.100
 export ROS_DISTRO=noetic
+export OPENCV_LOG_LEVEL=OFF
 alias topside="roslaunch launch_files topside.launch"
 alias Topside="roslaunch launch_files topside.launch"
