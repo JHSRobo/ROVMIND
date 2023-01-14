@@ -6,6 +6,8 @@ if [[ "$(id -u)" == 0 ]]
   exit
 fi
 
+git pull --hard
+
 cd /home/jhsrobo/ROVMIND/ros_workspace/src/
 
 . /opt/ros/noetic/setup.bash
