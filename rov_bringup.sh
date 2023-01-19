@@ -45,3 +45,4 @@ su - jhsrobo -c "rosdep update"
 
 # Clone our software from Github
 su - jhsrobo -c "bash /home/jhsrobo/ROVMIND/rov_repo_clone.sh"
+ip link set wlan0 down
