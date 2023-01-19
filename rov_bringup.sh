@@ -12,8 +12,8 @@ rm -rf /home/jhsrobo/ROVMIND/tcu_repo_clone.sh
 rm -rf /home/jhsrobo/ROVMIND/tcu_bringup.sh
 cp /home/jhsrobo/ROVMIND/bashrc_bottom /home/jhsrobo/.bashrc
 
-echo "192.168.1.100 master" >> /etc/cloud/templates/hosts.debian.tmpl
-echo "192.168.1.111 bottomside" >> /etc/cloud/templates/hosts.debian.tmpl
+echo "192.168.1.100 master" >> /etc/hosts
+echo "192.168.1.111 bottomside" >> /etc/hosts
 
 apt install curl python3-pip net-tools python3-rpi.gpio -y
 python3 -m pip install adafruit-circuitpython-servokit
