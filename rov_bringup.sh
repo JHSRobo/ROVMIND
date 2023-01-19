@@ -27,13 +27,13 @@ apt install ros-noetic-desktop -y
 . /opt/ros/noetic/setup.bash
 apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential i2c-tools -y
 rosdep init
-su - jhsrobo -c "rosdep update"
+rosdep update
 
 # Enable i2c
 echo "deb http://archive.raspberrypi.org/debian/ buster main" >> /etc/apt/sources.list
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 7FA3303E
 apt update
-apt install raspi-config
+apt install raspi-config -y
 sudo raspi-config nonint do_i2c 0
 
 touch /etc/udev/rules.d/60-extra-acl.rules
