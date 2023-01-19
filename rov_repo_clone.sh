@@ -5,6 +5,7 @@ if [[ "$(id -u)" == 0 ]]
   then echo "Please don't run as root"
   exit
 fi
+ip link set wlan0 up # Enable wifi if disabled by rov_bringup
 
 git pull --hard
 
@@ -30,3 +31,5 @@ rosdep install --from-paths src --ignore-src -r -y
 
 # Temporary fix below, find a better way to do this
 chmod +x /home/jhsrobo/ROVMIND/ros_workspace/src/thrusters/src/thrusterInterface.py
+
+ip link set wlan0 down # disable wifi once again
