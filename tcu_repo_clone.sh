@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Checks sudo perms
-if [[ "$(id -u)" == 0 ]]
-  then echo "Please don't run as root"
+# Check sudo perms
+if [[ "$(id -u)" != 0 ]]
+  then echo "Please run as root"
   exit
 fi
 
