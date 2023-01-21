@@ -16,6 +16,7 @@ echo "192.168.1.100 master" >> /etc/hosts
 echo "192.168.1.111 bottomside" >> /etc/hosts
 
 # Install ROS
+sudo apt install curl -y
 sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 apt update && apt upgrade --allow-unauthenticated -y
@@ -32,7 +33,7 @@ apt update && sudo apt-get dist-upgrade -y
 apt install raspi-config -y
 sudo raspi-config nonint do_i2c 0
 
-apt install curl python3-pip net-tools
+apt install python3-pip net-tools -y
 pip install RPi.GPIO # Not listed in python.yaml for ubuntu 20.04
 python3 -m pip install adafruit-circuitpython-servokit
 
