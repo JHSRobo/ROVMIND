@@ -43,4 +43,4 @@ touch /etc/udev/rules.d/60-extra-acl.rules
 . /home/jhsrobo/.bashrc
 
 # Clone our software from Github
-su - jhsrobo -c "bash /home/jhsrobo/ROVMIND/rov_repo_clone.sh"
+bash /home/jhsrobo/ROVMIND/rov_repo_clone.sh
