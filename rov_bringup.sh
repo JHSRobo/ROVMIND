@@ -35,6 +35,7 @@ apt install raspi-config -y
 sudo raspi-config nonint do_i2c 0
 
 apt install curl python3-pip net-tools
+pip install RPi.GPIO # Not listed in python.yaml for ubuntu 20.04
 
 touch /etc/udev/rules.d/60-extra-acl.rules
 . /home/jhsrobo/.bashrc
