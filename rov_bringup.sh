@@ -15,7 +15,6 @@ cp /home/jhsrobo/ROVMIND/bashrc_bottom /home/jhsrobo/.bashrc
 echo "192.168.1.100 master" >> /etc/hosts
 echo "192.168.1.111 bottomside" >> /etc/hosts
 
-apt install curl python3-pip net-tools python3-rpi.gpio -y
 python3 -m pip install adafruit-circuitpython-servokit
 
 # Install ROS
@@ -34,6 +33,8 @@ apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 7FA3303E
 apt update && sudo apt-get dist-upgrade -y
 apt install raspi-config -y
 sudo raspi-config nonint do_i2c 0
+
+apt install curl python3-pip net-tools python3-rpi.gpio -y
 
 touch /etc/udev/rules.d/60-extra-acl.rules
 . /home/jhsrobo/.bashrc
