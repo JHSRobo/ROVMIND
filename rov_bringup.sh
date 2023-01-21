@@ -29,9 +29,9 @@ rosdep init
 sudo -u jhsrobo rosdep update
 
 # Enable i2c
-apt update && sudo apt-get dist-upgrade -y
 echo "deb http://archive.raspberrypi.org/debian/ buster main" >> /etc/apt/sources.list
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 7FA3303E
+apt update && sudo apt-get dist-upgrade -y
 apt install raspi-config -y
 sudo raspi-config nonint do_i2c 0
 
