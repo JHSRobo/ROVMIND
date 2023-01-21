@@ -35,7 +35,6 @@ apt install raspi-config -y
 sudo raspi-config nonint do_i2c 0
 
 apt install curl python3-pip net-tools
-pip install RPi.GPIO
 
 touch /etc/udev/rules.d/60-extra-acl.rules
 . /home/jhsrobo/.bashrc
