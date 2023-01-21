@@ -34,7 +34,7 @@ apt install raspi-config -y
 sudo raspi-config nonint do_i2c 0
 
 apt install python3-pip net-tools -y
-pip install RPi.GPIO # Not listed in python.yaml for ubuntu 20.04
+python3 -m  pip install RPi.GPIO # Not listed in python.yaml for ubuntu 20.04
 python3 -m pip install adafruit-circuitpython-servokit
 
 touch /etc/udev/rules.d/60-extra-acl.rules
