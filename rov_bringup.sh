@@ -6,6 +6,8 @@ if [[ "$(id -u)" != 0 ]]
   exit
 fi
 
+adduser jhsrobo gpio
+
 # Edit Ubuntu Files
 rm -rf /home/jhsrobo/.bashrc
 rm -rf /home/jhsrobo/ROVMIND/tcu_repo_clone.sh
