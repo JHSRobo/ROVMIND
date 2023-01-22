@@ -14,8 +14,15 @@ rm -rf /home/jhsrobo/ROVMIND/tcu_repo_clone.sh
 rm -rf /home/jhsrobo/ROVMIND/tcu_bringup.sh
 cp /home/jhsrobo/ROVMIND/bashrc_bottom /home/jhsrobo/.bashrc
 
+# Template file for /etc/hosts
 echo "192.168.1.100 master" >> /etc/cloud/templates/hosts.debian.tmpl
 echo "192.168.1.111 bottomside" >> /etc/cloud/templates/hosts.debian.tmpl
+
+# Make nano a bit friendlier for tweaking
+touch /home/jhsrobo/.nanorc
+touch /root/.nanorc
+echo -e "set mouse\nset autoindent\nset linenumbers" >> /home/jhsrobo/.nanorc
+echo -e "set mouse\nset autoindent\nset linenumbers" >> /root/.nanorc
 
 # Install ROS
 sudo apt install curl -y
