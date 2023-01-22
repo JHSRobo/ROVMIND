@@ -19,6 +19,12 @@ echo "192.168.1.111 bottomside" >> /etc/hosts
 
 . /home/jhsrobo/.bashrc
 
+# Make nano a bit friendlier for tweaking
+touch /home/jhsrobo/.nanorc
+touch /root/.nanorc
+echo -e "set mouse\nset autoindent\nset linenumbers" >> /home/jhsrobo/.nanorc
+echo -e "set mouse\nset autoindent\nset linenumbers" >> /root/.nanorc
+
 # Install required packages
 # This is the section where we install packages that we can't install with rosdep
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
