@@ -30,11 +30,11 @@ sudo -u jhsrobo rosdep update
 
 # Enable i2c
 wget -p -O ./raspi-config_20211019_all.deb https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20221214_all.deb
-apt update && sudo apt-get dist-upgrade -y
-sudo apt -y install libnewt0.52 whiptail parted triggerhappy lua5.1 alsa-utils
-sudo apt install -fy
-sudo dpkg -i ./raspi-config_20221214_all.deb
-sudo raspi-config nonint do_i2c 0
+apt update && apt-get dist-upgrade -y
+apt -y install libnewt0.52 whiptail parted triggerhappy lua5.1 alsa-utils
+apt install -fy
+dpkg -i ./raspi-config_20221214_all.deb
+raspi-config nonint do_i2c 0
 
 apt install python3-pip net-tools -y
 python3 -m  pip install RPi.GPIO # Not listed in python.yaml for ubuntu 20.04
