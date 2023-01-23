@@ -23,9 +23,9 @@ sudo -u jhsrobo git clone https://github.com/JHSRobo/launch_files.git
 
 cd /home/jhsrobo/ROVMIND/ros_workspace
 
-rosdep update
-
 . /home/jhsrobo/ROVMIND/ros_workspace/devel/setup.bash
+
+rosdep update
 
 catkin_make
 rosdep install --from-paths src --ignore-src -r -y
