@@ -32,7 +32,7 @@ apt update && apt upgrade --allow-unauthenticated -y
 apt install ros-noetic-desktop -y
 . /opt/ros/noetic/setup.bash
 apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential i2c-tools -y
-rosdep init
+sudo -u rosdep init
 sudo -u jhsrobo rosdep update
 
 # Enable i2c
