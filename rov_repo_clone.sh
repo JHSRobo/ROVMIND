@@ -32,3 +32,4 @@ rosdep install --from-paths src --ignore-src -r -y
 
 # Temporary fix below, find a better way to do this
 chmod +x /home/jhsrobo/ROVMIND/ros_workspace/src/thrusters/src/thrusterInterface.py
+sudo chown jhsrobo: -R /home/jhsrobo/ROVMIND
