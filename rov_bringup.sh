@@ -55,5 +55,8 @@ python3 -m pip install adafruit-circuitpython-servokit
 touch /etc/udev/rules.d/60-extra-acl.rules
 . /home/jhsrobo/.bashrc
 bot
+
+sudo chown $USER: -R /home/jhsrobo/ROVMIND
+
 # Clone our software from Github
 bash /home/jhsrobo/ROVMIND/rov_repo_clone.sh
