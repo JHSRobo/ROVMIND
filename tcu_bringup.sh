@@ -47,3 +47,4 @@ sudo -u jhsrobo rosdep update
 
 # Clone our software from Github
 sudo -u jhsrobo bash tcu_repo_clone.sh
+sudo chown $USER: -R /home/jhsrobo/ROVMIND
