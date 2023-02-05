@@ -50,7 +50,7 @@ sudo chmod g+rw /dev/gpiomem
 
 apt install python3-pip python3-rpi.gpio net-tools -y
 python3 -m  pip install RPi.GPIO # Not listed in python.yaml for ubuntu 20.04
-python3 -m pip install adafruit-circuitpython-servokit
+python3 -m pip install adafruit-circuitpython-servokit smbus
 
 touch /etc/udev/rules.d/60-extra-acl.rules
 . /home/jhsrobo/.bashrc
