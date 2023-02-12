@@ -55,6 +55,7 @@ python3 -m pip install adafruit-circuitpython-servokit smbus
 # Temp files (Implement if Qwiic Library works)
 python3 -m pip install sparkfun-qwiic-i2c
 python3 -m pip install sparkfun-qwiic-pca9685
+python3 -m pip install sparkfun-pi-servo-hat
 
 touch /etc/udev/rules.d/60-extra-acl.rules
 . /home/jhsrobo/.bashrc
