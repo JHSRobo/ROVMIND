@@ -29,9 +29,7 @@ echo -e "set mouse\nset autoindent\nset linenumbers" >> /root/.nanorc
 # This is the section where we install packages that we can't install with rosdep
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
   # Above command adds key for ROS update
-apt install curl -y
-apt install python3-pip -y
-apt install net-tools -y
+apt install curl ros-noetic-joy python3-pip net-tools -y
 pip install simple-pid # This package will not work with rosdep for whatever reason
 
 # Installing ROS
