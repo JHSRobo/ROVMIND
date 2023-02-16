@@ -46,4 +46,4 @@ rosdep init
 sudo -u jhsrobo rosdep update
 
 # Clone our software from Github
-sudo -u jhsrobo bash tcu_repo_clone.sh
+sudo -u jhsrobo bash /home/jhsrobo/ROVMIND/tcu_repo_clone.sh
