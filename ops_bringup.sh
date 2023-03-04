@@ -47,4 +47,4 @@ rosdep init
 sudo -u jhsrobo rosdep update
 
 # Clone our software from Github
-sudo -u jhsrobo bash ops_repo_clone.sh
+sudo bash ops_repo_clone.sh
