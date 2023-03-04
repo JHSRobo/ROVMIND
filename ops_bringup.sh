@@ -15,9 +15,9 @@ rm -rf /home/jhsrobo/ROVMIND/tcu_bringup.sh
 cp /home/jhsrobo/ROVMIND/bashrc_op /home/jhsrobo/.bashrc
 touch /etc/udev/rules.d/joystick.rules
 
-echo "192.168.1.100 master" >> /etc/hosts
-echo "192.168.1.110 opside" >> /etc/hosts
-echo "192.168.1.111 bottomside" >> /etc/hosts
+echo "192.168.1.100 master" >> /etc/wsl.conf
+echo "192.168.1.110 opside" >> /etc/wsl.conf
+echo "192.168.1.111 bottomside" >> /etc/wsl.conf
 
 . /home/jhsrobo/.bashrc
 
