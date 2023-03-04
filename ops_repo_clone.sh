@@ -13,10 +13,11 @@ cd /home/jhsrobo/ROVMIND/ros_workspace/src/
 . /opt/ros/noetic/setup.bash
 
 # Remove old repos
-rm -rf thrusters depth_sensor gpio_control launch_files
+rm -rf coral_modeling launch_files
 
 # Clone new repos
 sudo -u jhsrobo git clone https://github.com/JHSRobo/coral_modeling.git
+sudo -u jhsrobo git clone https://github.com/JHSRobo/launch_files.git
 
 cd /home/jhsrobo/ROVMIND/ros_workspace
 
