@@ -10,10 +10,11 @@ fi
 rm -rf /home/jhsrobo/.bashrc
 rm -rf /home/jhsrobo/ROVMIND/rov_repo_clone.sh
 rm -rf /home/jhsrobo/ROVMIND/rov_bringup.sh
-cp /home/jhsrobo/ROVMIND/bashrc_top /home/jhsrobo/.bashrc
+rm -rf /home/jhsrobo/ROVMIND/tcu_repo_clone.sh
+rm -rf /home/jhsrobo/ROVMIND/tcu_bringup.sh
+cp /home/jhsrobo/ROVMIND/bashrc_op /home/jhsrobo/.bashrc
 touch /etc/udev/rules.d/joystick.rules
 
-echo "“KERNAL==“HyACMO” MODE==“06666””" >> /etc/udev/rules.d/joystick.rules
 echo "192.168.1.100 master" >> /etc/hosts
 echo "192.168.1.110 opside" >> /etc/hosts
 echo "192.168.1.111 bottomside" >> /etc/hosts
@@ -33,7 +34,6 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
 apt install curl -y
 apt install python3-pip -y
 apt install net-tools -y
-pip install simple-pid # This package will not work with rosdep for whatever reason
 
 # Installing ROS
 sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -47,4 +47,4 @@ rosdep init
 sudo -u jhsrobo rosdep update
 
 # Clone our software from Github
-sudo -u jhsrobo bash tcu_repo_clone.sh
+sudo -u jhsrobo bash ops_repo_clone.sh

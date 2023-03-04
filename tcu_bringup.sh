@@ -15,6 +15,7 @@ touch /etc/udev/rules.d/joystick.rules
 
 echo "“KERNAL==“HyACMO” MODE==“06666””" >> /etc/udev/rules.d/joystick.rules
 echo "192.168.1.100 master" >> /etc/hosts
+echo "192.168.1.110 opside" >> /etc/hosts
 echo "192.168.1.111 bottomside" >> /etc/hosts
 
 . /home/jhsrobo/.bashrc

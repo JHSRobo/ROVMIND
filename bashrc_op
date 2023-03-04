@@ -119,9 +119,9 @@ fi
 source /opt/ros/noetic/setup.bash
 source /home/jhsrobo/ROVMIND/ros_workspace/devel/setup.bash
 export ROS_MASTER_URI=http://master:11311
-export ROS_HOSTNAME=master
-export ROS_IP=192.168.1.100
+export ROS_HOSTNAME=opside
+export ROS_IP=192.168.1.110
 export ROS_DISTRO=noetic
 export OPENCV_LOG_LEVEL=OFF
-alias topside="roslaunch launch_files topside.launch"
-alias Topside="roslaunch launch_files topside.launch"
+alias opside="roslaunch launch_files opside.launch"
+alias Opside="roslaunch launch_files opside.launch"

@@ -115,7 +115,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-alias topside="cd /home/jhsrobo/ROVMIND/ros_workspace && rosrun launch_files bottomside.launch"
+
 source /opt/ros/noetic/setup.bash
 source /home/jhsrobo/ROVMIND/ros_workspace/devel/setup.bash
 export ROS_MASTER_URI=http://master:11311

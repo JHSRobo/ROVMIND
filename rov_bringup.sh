@@ -16,6 +16,7 @@ cp /home/jhsrobo/ROVMIND/bashrc_bottom /home/jhsrobo/.bashrc
 
 # Template file for /etc/hosts
 echo "192.168.1.100 master" >> /etc/cloud/templates/hosts.debian.tmpl
+echo "192.168.1.110 opside" >> /etc/cloud/templates/hosts.debian.tmpl
 echo "192.168.1.111 bottomside" >> /etc/cloud/templates/hosts.debian.tmpl
 
 # Make nano a bit friendlier for tweaking
