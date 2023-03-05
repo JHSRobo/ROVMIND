@@ -47,12 +47,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+        # We have color support; assume it's compliant with Ecma-48
+        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+        # a case would tend to support setf rather than setaf.)
+        color_prompt=yes
     else
-	color_prompt=
+        color_prompt=
     fi
 fi
 
@@ -120,8 +120,15 @@ source /opt/ros/noetic/setup.bash
 source /home/jhsrobo/ROVMIND/ros_workspace/devel/setup.bash
 export ROS_MASTER_URI=http://master:11311
 export ROS_HOSTNAME=opside
-export ROS_IP=192.168.1.110
+export ROS_IP="$(ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')"
 export ROS_DISTRO=noetic
 export OPENCV_LOG_LEVEL=OFF
 alias opside="roslaunch launch_files opside.launch"
 alias Opside="roslaunch launch_files opside.launch"
+
+# Update /etc/hosts with the most recent ip
+sudo rm -rf /etc/hosts
+sudo cp ~/ROVMIND/hosts_op ~/ROVMIND/hosts
+sudo sh -c "echo $ROS_IP opside >> /home/jhsrobo/ROVMIND/hosts"
+sudo cp /home/jhsrobo/ROVMIND/hosts /etc/hosts
+sudo rm -rf /home/jhsrobo/ROVMIND/hosts
