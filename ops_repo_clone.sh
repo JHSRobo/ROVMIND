@@ -17,6 +17,7 @@ rm -rf coral_modeling launch_files
 
 # Clone new repos
 sudo -u jhsrobo git clone https://github.com/JHSRobo/coral_modeling.git
+sudo -u jhsrobo git clone https://github.com/JHSRobo/img_capture.git
 sudo -u jhsrobo git clone https://github.com/JHSRobo/launch_files.git
 
 cd /home/jhsrobo/ROVMIND/ros_workspace
